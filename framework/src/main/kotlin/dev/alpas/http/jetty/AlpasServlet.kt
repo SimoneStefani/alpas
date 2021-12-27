@@ -20,10 +20,10 @@ class AlpasServlet(
     private val serverEntryMiddleware: Iterable<KClass<out Middleware<HttpCall>>>
 ) : HttpServlet() {
     private val staticHandler by lazy { StaticAssetHandler(app) }
-    private val corsHandler by lazy { CorsHandler(app) }
+    //private val corsHandler by lazy { CorsHandler(app) } // FIXME
 
     override fun service(req: HttpServletRequest, resp: HttpServletResponse) {
-        if (corsHandler.handle(req, resp)) return
+        //if (corsHandler.handle(req, resp)) return // FIXME
         if (staticHandler.handle(req, resp)) return
 
         val router = app.make<Router>()
@@ -80,7 +80,7 @@ class AlpasServlet(
                     "Method ${call.method} is not allowed for this operation. Only ${call.route.allowedMethods()
                         .joinToString(
                             ", "
-                        ).toUpperCase()} methods are allowed."
+                        ).uppercase()} methods are allowed."
                 )
             }
             else -> throw NotFoundHttpException()
@@ -118,6 +118,6 @@ class AlpasServlet(
         if (method != Method.POST.name || !allowMethodSpoofing) {
             return method
         }
-        return parameterMap["_method"]?.firstOrNull()?.toUpperCase() ?: method
+        return parameterMap["_method"]?.firstOrNull()?.uppercase() ?: method
     }
 }

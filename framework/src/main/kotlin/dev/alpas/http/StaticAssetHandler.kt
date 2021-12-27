@@ -58,7 +58,7 @@ class StaticAssetHandler(app: Application) {
     }
 
     fun handle(request: HttpServletRequest, response: HttpServletResponse): Boolean {
-        if (request.method.toUpperCase().isOneOf("GET", "HEAD")) {
+        if (request.method.uppercase().isOneOf("GET", "HEAD")) {
             val uri = request.requestURI
             val jettyRequest = request.getAttribute("jetty-request") as Request
             gzipHandlers.forEach { handler ->

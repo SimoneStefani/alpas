@@ -31,7 +31,7 @@ class MakeEntityCommand(srcPackage: String) :
             .replacements(
                 mapOf(
                     "StubTableClazzName" to table.toPascalCase(),
-                    "StubTableName" to table.toSnakeCase().toLowerCase()
+                    "StubTableName" to table.toSnakeCase().lowercase()
                 )
             )
     }

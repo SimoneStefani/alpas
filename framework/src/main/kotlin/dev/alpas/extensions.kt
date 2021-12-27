@@ -176,7 +176,7 @@ inline infix fun String?.whenNotNullOrEmpty(thenDo: (String) -> String?): String
     if (this.isNullOrEmpty()) this else thenDo(this)
 
 inline fun String?.ifNotBlank(defaultValue: (String) -> String): String =
-    if (!isNullOrBlank()) defaultValue(this!!) else ""
+    if (!isNullOrBlank()) defaultValue(this) else ""
 
 inline infix fun <R : Any> String?.whenNotNullOrEmpty(thenDo: (String) -> R): R? =
     if (this.isNullOrEmpty()) null else thenDo(this)

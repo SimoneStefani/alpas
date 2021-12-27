@@ -7,7 +7,7 @@ import java.nio.file.Paths
 internal class EnvironmentServiceProvider : ServiceProvider {
     private val runMode by lazy {
         val mode = System.getenv(RUN_MODE) ?: System.getProperty(RUN_MODE) ?: "server"
-        RunMode.valueOf(mode.toUpperCase())
+        RunMode.valueOf(mode.uppercase())
     }
 
     override fun register(app: Application) {

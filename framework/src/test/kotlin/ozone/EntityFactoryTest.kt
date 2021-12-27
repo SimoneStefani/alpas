@@ -207,7 +207,7 @@ private object TransformingTestObjectFactory : EntityFactory<TestEntity, TestTab
 
     override fun transform(name: String, value: Any?): Any? {
         return if (name == "firstName") {
-            value?.toString()?.toUpperCase()
+            value?.toString()?.uppercase()
         } else {
             value
         }

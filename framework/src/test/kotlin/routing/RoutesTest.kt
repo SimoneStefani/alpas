@@ -421,7 +421,7 @@ class RoutesTest {
         ).forEach { method ->
             val route = router.routes.find { it.method == method }
             assertNotNull(route)
-            assertEquals("${route?.path?.toLowerCase()}", route?.path)
+            assertEquals("${route?.path?.lowercase()}", route?.path)
         }
     }
 
@@ -441,8 +441,8 @@ class RoutesTest {
         ).forEach { method ->
             val route = router.routes.find { it.method == method }
             assertNotNull(route)
-            assertEquals("${route?.path?.toLowerCase()}", route?.path)
-            assertEquals("test${method.toString().toLowerCase()}", (route?.handler as ControllerHandler).method)
+            assertEquals("${route?.path?.lowercase()}", route?.path)
+            assertEquals("test${method.toString().lowercase()}", (route?.handler as ControllerHandler).method)
             assertEquals(
                 "dev.alpas.tests.routing.TypedController",
                 (route.handler as ControllerHandler).controller.qualifiedName

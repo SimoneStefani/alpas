@@ -41,7 +41,7 @@ enum class SessionStoreDriver {
 
     companion object {
         fun fromString(name: String?, default: SessionStoreDriver): SessionStoreDriver {
-            return name?.toUpperCase()?.let { valueOf(it) } ?: default
+            return name?.uppercase()?.let { valueOf(it) } ?: default
         }
     }
 }
@@ -51,7 +51,7 @@ enum class SessionCacheDriver {
 
     companion object {
         fun fromString(name: String?, default: SessionCacheDriver): SessionCacheDriver {
-            return name?.toUpperCase()?.let { valueOf(it) } ?: default
+            return name?.uppercase()?.let { valueOf(it) } ?: default
         }
     }
 }

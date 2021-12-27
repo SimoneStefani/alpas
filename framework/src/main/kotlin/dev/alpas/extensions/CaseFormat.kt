@@ -6,6 +6,8 @@
  */
 package dev.alpas.extensions
 
+import java.util.Locale
+
 /**
  * An enumeration that represents a case format that can be used to join a collection of words into one string.
  */
@@ -48,15 +50,17 @@ enum class CaseFormat(
                     append(wordSplitter)
                 append(
                     when {
-                        wordUppercase -> word.toUpperCase()
+                        wordUppercase -> word.uppercase()
                         index == 0 -> {
                             when {
-                                firstWordCapitalize -> word.toLowerCase().capitalize()
-                                else -> word.toLowerCase()
+                                firstWordCapitalize -> word.lowercase()
+                                    .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+                                else -> word.lowercase()
                             }
                         }
-                        wordCapitalize -> word.toLowerCase().capitalize()
-                        else -> word.toLowerCase()
+                        wordCapitalize -> word.lowercase()
+                            .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+                        else -> word.lowercase()
                     }
                 )
             }

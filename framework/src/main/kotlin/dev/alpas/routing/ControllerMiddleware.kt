@@ -18,13 +18,13 @@ class ControllerMiddleware(
     ) : this(
         methods = listOf(method),
         middleware = middleware,
-        others = *others
+        others = others
     )
 
     constructor(middleware: KClass<out Middleware<HttpCall>>, vararg others: KClass<out Middleware<HttpCall>>) : this(
         methods = null,
         middleware = middleware,
-        others = *others
+        others = others
     )
 
     fun matches(method: String): Boolean {

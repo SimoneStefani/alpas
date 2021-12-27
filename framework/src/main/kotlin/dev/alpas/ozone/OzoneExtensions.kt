@@ -21,7 +21,7 @@ import java.time.Instant
  * Checks whether this database is of the given name type.
  */
 fun Database.isOfType(name: String): Boolean {
-    return this.productName.toLowerCase() == name.toLowerCase()
+    return this.productName.lowercase() == name.lowercase()
 }
 
 /**
@@ -75,7 +75,7 @@ inline fun <E : Any, T : BaseTable<E>> T.findOneOrFail(
     return this.findOne(predicate).orAbort(message, statusCode)
 }
 
-internal fun <T : Any> SqlType<T>.isVarChar(): Boolean = this.typeName.toLowerCase() == "varchar"
+internal fun <T : Any> SqlType<T>.isVarChar(): Boolean = this.typeName.lowercase() == "varchar"
 
 fun Query.selectFirst() = apply {
     try {

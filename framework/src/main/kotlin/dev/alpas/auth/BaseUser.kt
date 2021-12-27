@@ -16,7 +16,7 @@ interface BaseUser<E : BaseUser<E>> : OzoneEntity<E>, Authenticatable {
 
     @ExperimentalUnsignedTypes
     fun gravatarUrl(): String {
-        val hash = email?.trim()?.toLowerCase()?.md5() ?: ""
+        val hash = email?.trim()?.lowercase()?.md5() ?: ""
         return "//www.gravatar.com/avatar/$hash?s=160&d=robohash"
     }
 

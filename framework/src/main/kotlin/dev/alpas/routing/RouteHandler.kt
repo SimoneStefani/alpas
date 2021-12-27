@@ -56,13 +56,11 @@ sealed class RouteHandler {
 
 class ControllerHandler(val controller: KClass<out Controller>, val method: String) : RouteHandler() {
     override fun handle(call: HttpCall) {
-        controllerInstance?.let { controller ->
-            invokeControllerMethod(method, controller, call)
-        }.orAbort()
+        invokeControllerMethod(method, controllerInstance, call).orAbort()
     }
 
     override fun toString() = "${controller.qualifiedName}#$method"
-    private val controllerInstance by lazy { controller.createInstance() as? Controller }
+    private val controllerInstance by lazy { controller.createInstance() }
 }
 
 class DynamicControllerHandler(private val controllerName: String, val method: String) : RouteHandler() {
@@ -126,12 +124,12 @@ class SSECall(private val call: HttpCall) : Container by call, RequestParamsBagC
         try {
             val sb = StringBuilder()
             if (id != null) {
-                sb.appendln("id: $id")
+                sb.appendLine("id: $id")
             }
-            sb.appendln("event: $event")
-            sb.appendln("data: ${data.toJson()}")
-            sb.appendln()
-            sb.appendln()
+            sb.appendLine("event: $event")
+            sb.appendLine("data: ${data.toJson()}")
+            sb.appendLine()
+            sb.appendLine()
             call.servletRequest.asyncContext.response.apply {
                 outputStream.print(sb.toString())
                 flushBuffer()

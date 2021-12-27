@@ -44,7 +44,7 @@ abstract class GeneratorCommand(
         val outputFiles = outputFilenames().map { name ->
             val pathComponents = name.split("/")
             val parentDirs = pathComponents.subList(0, pathComponents.count() - 1).map { dir ->
-                dir.toLowerCase()
+                dir.lowercase()
             }.toTypedArray()
 
             val filename = pathComponents.last()

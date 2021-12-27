@@ -33,8 +33,7 @@ class MemoryBasedQueueCircuitChecker(val path: String) : QueueCircuitChecker {
     private val isClose get() = !channel.isOpen
 
     override fun isTripped(): Boolean {
-        return isClose || channel.map(FileChannel.MapMode.READ_WRITE, 0, 4).asCharBuffer().get()
-            .toInt() != 0
+        return isClose || channel.map(FileChannel.MapMode.READ_WRITE, 0, 4).asCharBuffer().get().code != 0
     }
 
     override fun start(container: Container) {
