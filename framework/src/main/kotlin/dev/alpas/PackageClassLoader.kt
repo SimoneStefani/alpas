@@ -6,7 +6,7 @@ import java.io.Closeable
 import kotlin.reflect.KClass
 
 class PackageClassLoader(val packageName: String) : Closeable {
-    private val classGraph = ClassGraph().whitelistPackages(packageName).disableNestedJarScanning().scan()
+    private val classGraph = ClassGraph().acceptPackages(packageName).disableNestedJarScanning().scan()
 
     override fun close() {
         classGraph.close()
