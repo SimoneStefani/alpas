@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":alpas:main" external.linked.project.path="$MODULE_DIR$/../../../framework" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="dev.alpas" external.system.module.type="sourceSet" external.system.module.version="0.16.18" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":alpas:main" external.linked.project.path="$MODULE_DIR$/../../../framework" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="dev.alpas" external.system.module.type="sourceSet" external.system.module.version="0.16.20" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="5" platform="JVM 1.8" allPlatforms="JVM [1.8]" useProjectSettings="false">
@@ -29,7 +29,7 @@
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/dotenv-kotlin/6.2.2/2d7102bf990673e033e6713559f91e8b97dfbabe/dotenv-kotlin-6.2.2.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/uy.kohesive.klutter/klutter-core/3.0.0/2ec06ff9b040b2d414e672491aad7dbb9d789366/klutter-core-3.0.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ajalt/colormath/1.2.0/c62f49b31f34588dbbfb477c08fd56bc3026d202/colormath-1.2.0.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kittinunf.fuel/fuel-coroutines/2.2.2/1ae6f63f260cd9682a0db7dcec3b547eb53ffd51/fuel-coroutines-2.2.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kittinunf.fuel/fuel-coroutines/2.3.1/ef21c240ac5f9dd72f777ef303e5520a0ddedf2/fuel-coroutines-2.3.1.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.6.0/f3b8fd26c2e76d2f18cbc36aacb6e349fcb9fd5f/kotlinx-coroutines-core-jvm-1.6.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.microutils/kotlin-logging-jvm/2.1.21/7a65a2789a27c67c281a4fe9e78689cf5e2b36d8/kotlin-logging-jvm-2.1.21.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.6.0/baf82c475e9372c25407f3d132439e4aa803b8b8/kotlin-stdlib-jdk8-1.6.0.jar</arg>
@@ -44,8 +44,8 @@
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.pebbletemplates/pebble/3.1.5/bc7d795cef5281a4f75d00df2607d78de0ae4bc/pebble-3.1.5.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.marlonlom/timeago/4.0.3/a22127854a3e4015621cfc64908b529bdb219b9c/timeago-4.0.3.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.javafaker/javafaker/1.0.2/be0ff271b1208416822db4438864df47f90af92f/javafaker-1.0.2.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kittinunf.fuel/fuel-jackson/2.2.2/8d5f07c29df1f0d723391624061a6611ec069d49/fuel-jackson-2.2.2.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kittinunf.fuel/fuel/2.2.2/1e282076a85ac3a33ec220f7634ec9ff980f8c58/fuel-2.2.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kittinunf.fuel/fuel-jackson/2.3.1/7e756ec03e2d15334ea9be205509ff28f3d86cf5/fuel-jackson-2.3.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kittinunf.fuel/fuel/2.3.1/c1b88ced2b60d50c519526d0a82463561afcbcd4/fuel-2.3.1.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.danielnorberg/rut/v1.0.1/bd577bb1f3572c7b5a08645cf039bdaf8174ea5a/rut-v1.0.1.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.picocontainer/picocontainer/2.15/1b05ebc330fb947f74fe98469f64f99e6bdd9892/picocontainer-2.15.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.classgraph/classgraph/4.8.138/af08df0ad62de2f4c686757a9a52ca2a8c2ea28c/classgraph-4.8.138.jar</arg>
@@ -67,7 +67,7 @@
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.5/6c6c702c89bfff3cd9e80b04d668c5e190d588c6/commons-lang3-3.5.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.23/e8520d52edca3d8dc0f366cff520fb4498ec8a5f/snakeyaml-1.23-android.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.mifmif/generex/1.0.2/b378f873b4e8d7616c3d920e2132cb1c87679600/generex-1.0.2.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kittinunf.result/result/2.2.0/a757a3097fe0a738465df95b449ae18ed1344687/result-2.2.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kittinunf.result/result/3.1.0/6fd9f9b9e66bfdeb6a1c27f58e5ea20f54f02d28/result-3.1.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-xml/9.4.26.v20200117/78b9dd5d23be4b455ef01abecd81c2eb1d4102b6/jetty-xml-9.4.26.v20200117.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.danielnorberg.rut/rut-benchmark/v1.0.1/caebf90419ba271f4ec14a5f0f5eaf130a3edcf6/rut-benchmark-v1.0.1.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.danielnorberg.rut/rut-examples/v1.0.1/9e1779e882d2c1a37232560d9df0d68a259cd724/rut-examples-v1.0.1.jar</arg>
@@ -144,7 +144,7 @@
     <orderEntry type="library" name="Gradle: com.github.ajalt:mordant:1.2.1" level="project" />
     <orderEntry type="library" name="Gradle: io.github.cdimascio:dotenv-kotlin:6.2.2" level="project" />
     <orderEntry type="library" name="Gradle: uy.kohesive.klutter:klutter-core:3.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.kittinunf.fuel:fuel-coroutines:2.2.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.kittinunf.fuel:fuel-coroutines:2.3.1" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.6.10" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-webapp:9.4.26.v20200117" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-server:9.4.26.v20200117" level="project" />
@@ -153,8 +153,8 @@
     <orderEntry type="library" name="Gradle: io.pebbletemplates:pebble:3.1.5" level="project" />
     <orderEntry type="library" name="Gradle: com.github.marlonlom:timeago:4.0.3" level="project" />
     <orderEntry type="library" name="Gradle: com.github.javafaker:javafaker:1.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.kittinunf.fuel:fuel-jackson:2.2.2" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.kittinunf.fuel:fuel:2.2.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.kittinunf.fuel:fuel-jackson:2.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.kittinunf.fuel:fuel:2.3.1" level="project" />
     <orderEntry type="library" name="Gradle: com.github.danielnorberg:rut:v1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.picocontainer:picocontainer:2.15" level="project" />
     <orderEntry type="library" name="Gradle: io.github.classgraph:classgraph:4.8.138" level="project" />
@@ -184,7 +184,7 @@
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.5" level="project" />
     <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:android:1.23" level="project" />
     <orderEntry type="library" name="Gradle: com.github.mifmif:generex:1.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.kittinunf.result:result:2.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.kittinunf.result:result:3.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.github.danielnorberg.rut:rut-benchmark:v1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.github.danielnorberg.rut:rut-examples:v1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.github.danielnorberg.rut:rut:v1.0.1" level="project" />
