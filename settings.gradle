@@ -1,8 +1,6 @@
 include "framework"
 include "pulsar"
 
-enableFeaturePreview("STABLE_PUBLISHING")
-
 rootProject.name = 'alpas'
 project(":framework").name = 'alpas'
 
