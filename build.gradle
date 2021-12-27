@@ -14,7 +14,7 @@ buildscript {
 
 allprojects {
     group = "dev.alpas"
-    version = '0.16.16'
+    version = '0.16.17'
 }
 
 subprojects { project ->

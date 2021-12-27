@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":alpas:main" external.linked.project.path="$MODULE_DIR$/../../../framework" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="dev.alpas" external.system.module.type="sourceSet" external.system.module.version="0.16.16" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":alpas:main" external.linked.project.path="$MODULE_DIR$/../../../framework" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="dev.alpas" external.system.module.type="sourceSet" external.system.module.version="0.16.17" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="5" platform="JVM 1.8" allPlatforms="JVM [1.8]" useProjectSettings="false">
@@ -23,7 +23,7 @@
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ajalt/clikt/2.5.0/2033a17395846ff88818aee012d229feaafb090c/clikt-jvm-2.5.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ajalt/mordant/1.2.1/6cbab1a74ab6dafbf81b7706733d4c2fbaff2e0b/mordant-1.2.1.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/dotenv-kotlin/6.2.2/2d7102bf990673e033e6713559f91e8b97dfbabe/dotenv-kotlin-6.2.2.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/uy.kohesive.klutter/klutter-core/2.6.0/db30269dfeb5a77b8b0be378da5a8967c1444ea3/klutter-core-2.6.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/uy.kohesive.klutter/klutter-core/3.0.0/2ec06ff9b040b2d414e672491aad7dbb9d789366/klutter-core-3.0.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ajalt/colormath/1.2.0/c62f49b31f34588dbbfb477c08fd56bc3026d202/colormath-1.2.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kittinunf.fuel/fuel-coroutines/2.2.2/1ae6f63f260cd9682a0db7dcec3b547eb53ffd51/fuel-coroutines-2.2.2.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.6.0/f3b8fd26c2e76d2f18cbc36aacb6e349fcb9fd5f/kotlinx-coroutines-core-jvm-1.6.0.jar</arg>
@@ -46,13 +46,14 @@
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.picocontainer/picocontainer/2.15/1b05ebc330fb947f74fe98469f64f99e6bdd9892/picocontainer-2.15.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.classgraph/classgraph/4.8.138/af08df0ad62de2f4c686757a9a52ca2a8c2ea28c/classgraph-4.8.138.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.simbiose/Encryption/2.0.1/474de9eb70f4751601854b9f516aa7e1190f5152/Encryption-2.0.1.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.qpid/qpid-jms-client/0.48.0/f1a2d0a857cfdd875ff08da191e2718003837858/qpid-jms-client-0.48.0.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.simplejavamail/simple-java-mail/6.0.3/ad580ef2c53dbbc2e345b40e3ec306b92b75a5f2/simple-java-mail-6.0.3.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.simplejavamail/core-module/6.0.3/e38bddbef5dadfde46480e20eec54b5b69a73686/core-module-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.qpid/qpid-jms-client/1.5.0/dea7ef0121bdea8fa7181b58f0080bdabb40bdf3/qpid-jms-client-1.5.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.simplejavamail/simple-java-mail/6.7.5/16dfece088d373a97e852ce3c20d090f5e80406a/simple-java-mail-6.7.5.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.simplejavamail/core-module/6.7.5/8812a61262a754f552979342074c9d3b84772e01/core-module-6.7.5.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bbottema/emailaddress-rfc2822/2.2.0/931605d0f02b871b2d1cdd19445b9bf3a2967ec2/emailaddress-rfc2822-2.2.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.0-alpha5/241721b0e0ef3cd6cf584b8f0e24d24ea80799ea/slf4j-api-2.0.0-alpha5.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.mkammerer/argon2-jvm/2.11/71dc4cb0d19f406fe6b4579a28caf708327c3515/argon2-jvm-2.11.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.alpas/url-signer/0.1.7/a8ccad8b32a4913e4072c724237a3a1d57ec7604/url-signer-0.1.7.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.freva/ascii-table/1.1.0/febb5cb3665e979d84e2fa5c97c176a2d1e8376b/ascii-table-1.1.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.freva/ascii-table/1.2.0/f3488296f22cc93981fe870033e06075f4a5526a/ascii-table-1.2.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.6.10/c118700e3a33c8a0d9adc920e9dec0831171925/kotlin-stdlib-common-1.6.10.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar</arg>
@@ -73,24 +74,26 @@
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.cdimascio/dotenv-java/2.2.0/fd7d87e8f0c68bcd5610114102a53118ae65db9/dotenv-java-2.2.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.mkammerer/argon2-jvm-nolibs/2.11/2287b00dd0bac4c55cfbb624260774144e072406/argon2-jvm-nolibs-2.11.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.geronimo.specs/geronimo-jms_2.0_spec/1.0-alpha-2/8d8a4d5a80138ba4ebc7b5509989e3d7013c7e74/geronimo-jms_2.0_spec-1.0-alpha-2.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.qpid/proton-j/0.33.3/89a53d9b2c941c8c07aeb8ddf0c85e07beeb484b/proton-j-0.33.3.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.1.43.Final/7320f9db621dc51b79807a4e5094665f260432c/netty-codec-http-4.1.43.Final.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.43.Final/f83ac0492d44057d07ec6d40cf79e8e2de949836/netty-handler-4.1.43.Final.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.43.Final/ab3836b204a1526bd8fc51efcf34d5ee77b58e28/netty-transport-native-epoll-4.1.43.Final-linux-x86_64.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-kqueue/4.1.43.Final/2a3ba5a9faea2b981286f63f82c753962f50c1d5/netty-transport-native-kqueue-4.1.43.Final-osx-x86_64.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.43.Final/44731a5739c40a8434c43e1303e9196f23da67fa/netty-codec-4.1.43.Final.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.43.Final/e9b1a4ff3824d29c8bc69287ba83a848057d757e/netty-transport-native-unix-common-4.1.43.Final.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.43.Final/781cd7cfc1118bdfe1538f39cc1f4d07d6254094/netty-transport-4.1.43.Final.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.43.Final/c0d142260a32709523e3bcf0d015b193f2ff2df4/netty-buffer-4.1.43.Final.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.43.Final/94ae5a7e595fdc29dac254014e3159d3572d7e44/netty-resolver-4.1.43.Final.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.43.Final/ccb6f627ded1bb2671a66a84506174d240c7bec8/netty-common-4.1.43.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.qpid/proton-j/0.33.10/fb31048dec7642e31982a46500acb211f52f6314/proton-j-0.33.10.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.1.72.Final/a8f062d67303a5e4b2bc2ad48fb4fd8c99108e45/netty-codec-http-4.1.72.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.72.Final/9feee089fee606c64be90c0332db9aef1f7d8e46/netty-handler-4.1.72.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.72.Final/b3eef308278d874e208388164b9eabcd1e1e6963/netty-transport-native-epoll-4.1.72.Final-linux-x86_64.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-kqueue/4.1.72.Final/55c34d17be1489c3936800f0505c3c04389b1848/netty-transport-native-kqueue-4.1.72.Final-osx-x86_64.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.72.Final/613c4019d687db4e9a5532564e442f83c4474ed7/netty-codec-4.1.72.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-epoll/4.1.72.Final/490c922f85c8f6a5b39bdeec1f6629d58d48eaff/netty-transport-classes-epoll-4.1.72.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-kqueue/4.1.72.Final/fbcce97a6f9f79b8c5fc118bb838e7a4526d8efa/netty-transport-classes-kqueue-4.1.72.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.72.Final/cedc023ffdcb68543b22a1ebc7960a160589aa09/netty-transport-native-unix-common-4.1.72.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.72.Final/99138b436a584879355aca8fe3c64b46227d5d79/netty-transport-4.1.72.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.72.Final/f306eec3f79541f9b8af9c471a0d5b63b7996272/netty-buffer-4.1.72.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.72.Final/4ff458458ea32ed1156086820b624a815fcbf2c0/netty-resolver-4.1.72.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.72.Final/a55bac9c3af5f59828207b551a96ac19bbfc341e/netty-common-4.1.72.Final.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.4.26.v20200117/92773fe479178cd35f9b4b4704d94ba0a148a948/jetty-util-9.4.26.v20200117.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.11.4/593f7b18bab07a76767f181e2a2336135ce82cc4/jackson-core-2.11.4.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/dk.brics.automaton/automaton/1.11-8/6ebfa65eb431ff4b715a23be7a750cbc4cc96d0f/automaton-1.11-8.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjdk.jmh/jmh-core/1.19/1ea93b88f8154f0a35c16b46d76cfb2febcf4916/jmh-core-1.19.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bbottema/emailaddress-rfc2822/2.1.3/c23d0239737c913f16bb482b4fd1ddd6060e186c/emailaddress-rfc2822-2.1.3.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.mail/jakarta.mail/1.6.3/787e007e377223bba85a33599d3da416c135f99b/jakarta.mail-1.6.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-tcnative-classes/2.0.46.Final/9937a832d9c19861822d345b48ced388b645aa5f/netty-tcnative-classes-2.0.46.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.mail/jakarta.mail/1.6.5/d08124137cf42397d00b71b5985fd1dc248ac07f/jakarta.mail-1.6.5.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.activation/jakarta.activation/1.2.1/8013606426a73d8ba6b568370877251e91a38b89/jakarta.activation-1.2.1.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/2.3.2/8d49996a4338670764d7ca4b85a1c4ccf7fe665d/jakarta.xml.bind-api-2.3.2.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/1.3.5/59eb84ee0d616332ff44aba065f3888cf002cd2d/jakarta.annotation-api-1.3.5.jar</arg>
@@ -140,7 +143,7 @@
     <orderEntry type="library" name="Gradle: com.github.ajalt:clikt:2.5.0" level="project" />
     <orderEntry type="library" name="Gradle: com.github.ajalt:mordant:1.2.1" level="project" />
     <orderEntry type="library" name="Gradle: io.github.cdimascio:dotenv-kotlin:6.2.2" level="project" />
-    <orderEntry type="library" name="Gradle: uy.kohesive.klutter:klutter-core:2.6.0" level="project" />
+    <orderEntry type="library" name="Gradle: uy.kohesive.klutter:klutter-core:3.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.github.kittinunf.fuel:fuel-coroutines:2.2.2" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.6.10" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-webapp:9.4.26.v20200117" level="project" />
@@ -156,12 +159,12 @@
     <orderEntry type="library" name="Gradle: org.picocontainer:picocontainer:2.15" level="project" />
     <orderEntry type="library" name="Gradle: io.github.classgraph:classgraph:4.8.138" level="project" />
     <orderEntry type="library" name="Gradle: com.github.simbiose:Encryption:2.0.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.qpid:qpid-jms-client:0.48.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.simplejavamail:simple-java-mail:6.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.qpid:qpid-jms-client:1.5.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.simplejavamail:simple-java-mail:6.7.5" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:2.0.0-alpha5" level="project" />
     <orderEntry type="library" name="Gradle: de.mkammerer:argon2-jvm:2.11" level="project" />
     <orderEntry type="library" name="Gradle: com.github.alpas:url-signer:0.1.7" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.freva:ascii-table:1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.freva:ascii-table:1.2.0" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.7" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.11.4" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.11.4" level="project" />
@@ -186,15 +189,15 @@
     <orderEntry type="library" name="Gradle: com.github.danielnorberg.rut:rut-examples:v1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.github.danielnorberg.rut:rut:v1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.geronimo.specs:geronimo-jms_2.0_spec:1.0-alpha-2" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.qpid:proton-j:0.33.3" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Gradle: org.simplejavamail:core-module:6.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.qpid:proton-j:0.33.10" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.simplejavamail:core-module:6.7.5" level="project" />
     <orderEntry type="library" name="Gradle: de.mkammerer:argon2-jvm-nolibs:2.11" level="project" />
     <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.9" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.11.4" level="project" />
@@ -203,17 +206,21 @@
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-util:9.4.26.v20200117" level="project" />
     <orderEntry type="library" name="Gradle: dk.brics.automaton:automaton:1.11-8" level="project" />
     <orderEntry type="library" name="Gradle: org.openjdk.jmh:jmh-core:1.19" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-unix-common:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.bbottema:emailaddress-rfc2822:2.1.3" level="project" />
-    <orderEntry type="library" name="Gradle: com.sun.mail:jakarta.mail:1.6.3" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-tcnative-classes:2.0.46.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-classes-epoll:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-unix-common:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-classes-kqueue:4.1.72.Final" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.bbottema:emailaddress-rfc2822:2.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.sun.mail:jakarta.mail:1.6.5" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.activation:jakarta.activation:1.2.1" level="project" />
     <orderEntry type="library" name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:2.3.2" level="project" />
     <orderEntry type="library" name="Gradle: jakarta.annotation:jakarta.annotation-api:1.3.5" level="project" />
     <orderEntry type="library" name="Gradle: net.sf.jopt-simple:jopt-simple:4.6" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-math3:3.2" level="project" />
     <orderEntry type="library" name="Gradle: jakarta.activation:jakarta.activation-api:1.2.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.github.bbottema:jetbrains-runtime-annotations:1.0.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: net.java.dev.jna:jna:5.8.0" level="project" />
   </component>
 </module>
