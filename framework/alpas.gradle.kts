@@ -18,8 +18,8 @@ dependencies {
     api("com.zaxxer:HikariCP:5.0.0")
     api("org.atteo:evo-inflector:1.3")
     api("io.pebbletemplates:pebble:3.1.5")
-    api("com.github.ajalt:clikt:2.8.0") // FIXME
-    api("com.github.ajalt:mordant:1.2.1") // FIXME
+    api("com.github.ajalt.clikt:clikt:3.3.0")
+    api("com.github.ajalt:mordant:1.2.1")
     api("io.github.microutils:kotlin-logging:2.1.21")
     api("me.liuwj.ktorm:ktorm-core:2.6.1") // FIXME
     api("me.liuwj.ktorm:ktorm-jackson:2.6.1") // FIXME
