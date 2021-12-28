@@ -1,6 +1,10 @@
 package dev.alpas.console
 
-import dev.alpas.*
+import dev.alpas.Environment
+import dev.alpas.asGray
+import dev.alpas.asMagenta
+import dev.alpas.relativize
+import dev.alpas.toPath
 import java.io.File
 import java.nio.file.Files
 
@@ -36,9 +40,11 @@ abstract class LinkResourcesCommand(
                 withColors {
                     echo("${green(" ✓")} ${brightGreen("Link Created")}")
                     echo(
-                        "${dim(env.rootPath().relativize(link.toAbsolutePath()))} ↝ ${dim(
-                            env.rootPath().relativize(target.toAbsolutePath())
-                        )}"
+                        "${dim(env.rootPath().relativize(link.toAbsolutePath()))} ↝ ${
+                            dim(
+                                env.rootPath().relativize(target.toAbsolutePath())
+                            )
+                        }"
                     )
                     echo(yellow(docsUrl))
                 }

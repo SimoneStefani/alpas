@@ -19,24 +19,34 @@ enum class CaseFormat(
 ) {
     /** SCREAMING_SNAKE_CASE */
     UPPER_UNDERSCORE(true, '_'),
+
     /** snake_case */
     LOWER_UNDERSCORE(false, '_'),
+
     /** PascalCase */
     CAPITALIZED_CAMEL(false, null, true, true),
+
     /** camelCase */
     CAMEL(false, null, true, false),
+
     /** TRAIN-CASE */
     UPPER_HYPHEN(true, '-'),
+
     /** kebab-case */
     LOWER_HYPHEN(false, '-'),
+
     /** UPPER SPACE CASE */
     UPPER_SPACE(true, ' '),
+
     /** Title Case */
     CAPITALIZED_SPACE(false, ' ', true, true),
+
     /** lower space case */
     LOWER_SPACE(false, ' '),
+
     /** UPPER.DOT.CASE */
     UPPER_DOT(true, '.'),
+
     /** dot.case */
     LOWER_DOT(false, '.');
 

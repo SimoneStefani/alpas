@@ -3,7 +3,11 @@
 package dev.alpas.tests
 
 import dev.alpas.PackageClassLoader
-import dev.alpas.routing.*
+import dev.alpas.routing.Controller
+import dev.alpas.routing.ControllerHandler
+import dev.alpas.routing.DynamicControllerHandler
+import dev.alpas.routing.Route
+import dev.alpas.routing.Router
 import io.mockk.Call
 import io.mockk.MockKAnswerScope
 import me.liuwj.ktorm.database.useConnection

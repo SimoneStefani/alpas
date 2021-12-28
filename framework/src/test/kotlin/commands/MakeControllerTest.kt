@@ -2,7 +2,9 @@ package dev.alpas.tests.commands
 
 import dev.alpas.SRC_DIR_KEY
 import dev.alpas.routing.console.MakeControllerCommand
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.io.TempDir

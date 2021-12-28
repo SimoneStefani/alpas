@@ -29,7 +29,8 @@ interface OzoneEntity<E : OzoneEntity<E>> : Entity<E> {
     val changedProperties: Set<String>
         get() {
             val impl = Proxy.getInvocationHandler(this)
-            val changedProperties = impl::class.declaredMemberProperties.first { it.name == "changedProperties" } as KProperty1<Any, Any>
+            val changedProperties =
+                impl::class.declaredMemberProperties.first { it.name == "changedProperties" } as KProperty1<Any, Any>
             return changedProperties.get(impl) as Set<String>
         }
 }

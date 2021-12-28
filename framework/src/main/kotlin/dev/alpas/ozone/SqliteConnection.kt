@@ -8,7 +8,8 @@ import me.liuwj.ktorm.support.sqlite.SQLiteDialect
 import java.io.File
 
 @Suppress("unused")
-open class SqliteConnection(private val env: Environment, private val config: ConnectionConfig? = null) : DatabaseConnection {
+open class SqliteConnection(private val env: Environment, private val config: ConnectionConfig? = null) :
+    DatabaseConnection {
     open val dialect = config?.sqlDialect ?: SQLiteDialect()
     open val extraParams = config?.extraParams ?: emptyMap()
 

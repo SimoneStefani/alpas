@@ -4,7 +4,9 @@ import dev.alpas.JsonSerializer
 import dev.alpas.base64Decoded
 import dev.alpas.encryption.EncryptedData
 import dev.alpas.encryption.Encrypter
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 

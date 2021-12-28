@@ -2,7 +2,11 @@ package dev.alpas.ozone.migration
 
 import com.github.ajalt.clikt.output.TermUi.echo
 import dev.alpas.deleteLastLine
-import dev.alpas.ozone.*
+import dev.alpas.ozone.ColumnInfo
+import dev.alpas.ozone.ColumnKey
+import dev.alpas.ozone.ColumnMetadata
+import dev.alpas.ozone.ColumnReferenceConstraint
+import dev.alpas.ozone.OzoneEntity
 import dev.alpas.terminalColors
 import me.liuwj.ktorm.database.Database
 import me.liuwj.ktorm.database.useConnection

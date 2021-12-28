@@ -2,7 +2,6 @@ package dev.alpas.queue.job
 
 import dev.alpas.Container
 import dev.alpas.queue.database.JobRecord
-import java.lang.Exception
 
 open class Job {
     open val delayInSeconds: Long = 1

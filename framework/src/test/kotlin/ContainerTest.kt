@@ -1,7 +1,19 @@
 package dev.alpas.tests
 
-import dev.alpas.*
-import org.junit.jupiter.api.Assertions.*
+import dev.alpas.ChildContainer
+import dev.alpas.DefaultContainer
+import dev.alpas.bindFactory
+import dev.alpas.bindIfMissing
+import dev.alpas.ephemeral
+import dev.alpas.make
+import dev.alpas.makeElse
+import dev.alpas.makeMany
+import dev.alpas.makeOrBind
+import dev.alpas.singletonFactory
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNotEquals
+import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance

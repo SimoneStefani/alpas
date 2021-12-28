@@ -9,7 +9,14 @@ class DatabaseMigrateCommand(private val container: Container, srcPackage: Strin
 
     override fun run() {
         println()
-        MigrationRunner(container, File(migrationsDirectory.toUri()), dryRun, migrationClassesScanner, useFilenames, quiet).migrate()
+        MigrationRunner(
+            container,
+            File(migrationsDirectory.toUri()),
+            dryRun,
+            migrationClassesScanner,
+            useFilenames,
+            quiet
+        ).migrate()
         withColors {
             println()
             echo(yellow("https://alpas.dev/docs/migrations"))

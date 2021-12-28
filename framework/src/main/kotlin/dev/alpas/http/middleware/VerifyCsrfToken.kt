@@ -1,10 +1,14 @@
 package dev.alpas.http.middleware
 
-import dev.alpas.*
+import dev.alpas.Handler
+import dev.alpas.Middleware
+import dev.alpas.config
 import dev.alpas.encryption.Encrypter
+import dev.alpas.hashEquals
 import dev.alpas.http.HttpCall
 import dev.alpas.http.X_CSRF_TOKEN_KEY
 import dev.alpas.http.X_XSRF_TOKEN_KEY
+import dev.alpas.make
 import dev.alpas.session.CSRF_SESSION_KEY
 import dev.alpas.session.SessionConfig
 import dev.alpas.session.TokenMismatchException

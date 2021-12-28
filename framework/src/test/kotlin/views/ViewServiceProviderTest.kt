@@ -1,10 +1,23 @@
 package dev.alpas.tests.views
 
 import com.mitchellbosecke.pebble.extension.AbstractExtension
-import dev.alpas.*
-import dev.alpas.view.*
+import dev.alpas.AppConfig
+import dev.alpas.Application
+import dev.alpas.Environment
+import dev.alpas.PackageClassLoader
+import dev.alpas.tryMake
+import dev.alpas.view.ConditionalTags
+import dev.alpas.view.CustomTags
+import dev.alpas.view.Mix
+import dev.alpas.view.ViewConfig
+import dev.alpas.view.ViewRenderer
+import dev.alpas.view.ViewServiceProvider
 import dev.alpas.view.extensions.PebbleExtensionWrapper
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.assertNull
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 

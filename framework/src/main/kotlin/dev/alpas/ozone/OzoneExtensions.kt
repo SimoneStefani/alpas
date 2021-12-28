@@ -58,7 +58,10 @@ fun <E : Any> BaseTable<E>.findOrFail(
     return this.findById(id).orAbort(message ?: "Record with id $id doesn't exist.", statusCode)
 }
 
-fun <E : OzoneEntity<E>, T : OzoneTable<E>> T.create(timestamp: Instant? = Instant.now(), block: AssignmentsBuilder.(T) -> Unit): E {
+fun <E : OzoneEntity<E>, T : OzoneTable<E>> T.create(
+    timestamp: Instant? = Instant.now(),
+    block: AssignmentsBuilder.(T) -> Unit
+): E {
     return create(emptyMap(), timestamp, block)
 }
 
@@ -229,7 +232,8 @@ inline fun <E : OzoneEntity<E>, T : OzoneTable<E>> HttpCall.entity(
                 val param = it.toString()
                 param.toLongOrNull() ?: it
             }
-    val noEntityError = if (env.isDev) "Entity with $primaryKey $key doesn't exist in the table '${table.tableName}'." else null
+    val noEntityError =
+        if (env.isDev) "Entity with $primaryKey $key doesn't exist in the table '${table.tableName}'." else null
     return table.findOne {
         (it[primaryKey] as Column<Any>) eq key
     }.orAbort(noEntityError)

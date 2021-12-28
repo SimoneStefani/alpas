@@ -3,6 +3,7 @@ package dev.alpas.queue
 import dev.alpas.Config
 import dev.alpas.Container
 import dev.alpas.Environment
+
 const val QUEUE_TRIGGER_FILENAME = "alpas_queue_trigger"
 
 @Suppress("unused")

@@ -31,7 +31,12 @@ class GuestOnlyMiddlewareTest {
     }
 
     @Test
-    fun `authenticated call is redirected`(@RelaxedMockK call: HttpCall, @MockK authChannel: AuthChannel, @MockK authConfig: AuthConfig, @RelaxedMockK redirector: Redirector) {
+    fun `authenticated call is redirected`(
+        @RelaxedMockK call: HttpCall,
+        @MockK authChannel: AuthChannel,
+        @MockK authConfig: AuthConfig,
+        @RelaxedMockK redirector: Redirector
+    ) {
         every { authConfig.ifAuthorizedRedirectToPath(any()) } returns "/login"
         every { authChannel.isLoggedIn() } returns true
         every { call getProperty "authChannel" } returns authChannel
@@ -46,7 +51,12 @@ class GuestOnlyMiddlewareTest {
     }
 
     @Test
-    fun `guest call is not redirected`(@RelaxedMockK call: HttpCall, @MockK authChannel: AuthChannel, @MockK authConfig: AuthConfig, @RelaxedMockK redirector: Redirector) {
+    fun `guest call is not redirected`(
+        @RelaxedMockK call: HttpCall,
+        @MockK authChannel: AuthChannel,
+        @MockK authConfig: AuthConfig,
+        @RelaxedMockK redirector: Redirector
+    ) {
         every { authConfig.ifAuthorizedRedirectToPath(any()) } returns "/login"
         every { authChannel.isLoggedIn() } returns false
         every { call getProperty "authChannel" } returns authChannel

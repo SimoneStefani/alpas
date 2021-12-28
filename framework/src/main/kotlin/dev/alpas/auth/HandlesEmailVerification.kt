@@ -6,7 +6,6 @@ import dev.alpas.make
 import dev.alpas.notifications.NotificationDispatcher
 import me.liuwj.ktorm.dsl.eq
 import me.liuwj.ktorm.dsl.update
-import me.liuwj.ktorm.schema.InstantSqlType
 import java.time.Instant
 
 interface HandlesEmailVerification {

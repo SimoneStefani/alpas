@@ -34,7 +34,11 @@ interface Redirectable {
         headers: Map<String, String> = emptyMap()
     ): RedirectResponse
 
-    fun home(status: Int = HttpStatus.MOVED_TEMPORARILY_302, headers: Map<String, String> = emptyMap()): RedirectResponse
+    fun home(
+        status: Int = HttpStatus.MOVED_TEMPORARILY_302,
+        headers: Map<String, String> = emptyMap()
+    ): RedirectResponse
+
     fun toRouteNamed(
         name: String,
         params: Map<String, Any> = emptyMap(),
@@ -74,7 +78,12 @@ class Redirector(
         return to(url, status, headers)
     }
 
-    override fun toRouteNamed(name: String, params: Map<String, Any>, status: Int, headers: Map<String, String>): RedirectResponse {
+    override fun toRouteNamed(
+        name: String,
+        params: Map<String, Any>,
+        status: Int,
+        headers: Map<String, String>
+    ): RedirectResponse {
         return to(urlGenerator.route(name, params = params), status, headers)
     }
 

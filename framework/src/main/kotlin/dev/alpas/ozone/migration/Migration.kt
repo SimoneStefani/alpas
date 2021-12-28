@@ -46,9 +46,14 @@ abstract class Migration {
     open fun shouldSkipBatch(batch: Int) = false
 
     open fun up() {}
-    open fun up(container: Container) {up()}
+    open fun up(container: Container) {
+        up()
+    }
+
     open fun down() {}
-    open fun down(container: Container) {down()}
+    open fun down(container: Container) {
+        down()
+    }
 
     protected fun execute(query: String) {
         adapter.execute(query)

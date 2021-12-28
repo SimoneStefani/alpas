@@ -22,7 +22,8 @@ open class Min(private val length: Int, private val message: ErrorMessage = null
         return ((value ?: "").toString().length >= length).also {
             if (!it) {
                 error =
-                    message?.let { it(attribute, value) } ?: "The '$attribute' must be at least $length characters long."
+                    message?.let { it(attribute, value) }
+                        ?: "The '$attribute' must be at least $length characters long."
             }
         }
     }

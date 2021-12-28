@@ -12,7 +12,10 @@ import io.mockk.mockk
 import me.liuwj.ktorm.database.Database
 import me.liuwj.ktorm.database.SqlDialect
 import me.liuwj.ktorm.expression.SqlFormatter
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.extension.ExtendWith
@@ -31,7 +34,10 @@ class MySqlConnectionTest {
     fun `can pass extra params`(@RelaxedMockK env: Environment) {
         env.fillWithTestValues()
         val connection = MySqlConnection(env, ConnectionConfig(extraParams = mapOf("allowPublicKeyRetrieval" to true)))
-        assertEquals("jdbc:mysql://testhost:3333/testdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true", connection.jdbcUrl)
+        assertEquals(
+            "jdbc:mysql://testhost:3333/testdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true",
+            connection.jdbcUrl
+        )
     }
 
     @Test

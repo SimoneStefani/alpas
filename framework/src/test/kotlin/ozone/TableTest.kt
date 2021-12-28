@@ -2,7 +2,11 @@ package dev.alpas.tests.ozone
 
 import dev.alpas.exceptions.NotFoundHttpException
 import dev.alpas.http.HttpCall
-import dev.alpas.ozone.*
+import dev.alpas.ozone.entity
+import dev.alpas.ozone.faker
+import dev.alpas.ozone.findOrCreate
+import dev.alpas.ozone.from
+import dev.alpas.ozone.update
 import dev.alpas.tests.BaseTest
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
@@ -12,8 +16,12 @@ import me.liuwj.ktorm.dsl.eq
 import me.liuwj.ktorm.entity.findAll
 import me.liuwj.ktorm.entity.findList
 import me.liuwj.ktorm.support.sqlite.SQLiteDialect
-import org.junit.jupiter.api.*
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.extension.ExtendWith
 import java.sql.Connection
 import java.sql.DriverManager

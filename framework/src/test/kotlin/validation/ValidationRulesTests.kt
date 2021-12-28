@@ -1,10 +1,21 @@
 package dev.alpas.tests.rules
 
 import dev.alpas.http.HttpCall
-import dev.alpas.validation.*
+import dev.alpas.validation.Confirm
+import dev.alpas.validation.Email
+import dev.alpas.validation.MatchesRegularExpression
+import dev.alpas.validation.Max
+import dev.alpas.validation.Min
+import dev.alpas.validation.MustBeInteger
+import dev.alpas.validation.MustBeString
+import dev.alpas.validation.NotNull
+import dev.alpas.validation.Required
 import io.mockk.every
 import io.mockk.mockk
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertThrows
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 
@@ -233,7 +244,7 @@ class ValidationRulesTests {
     }
 
     @Test
-    fun `matches-regular-expression rule test` () {
+    fun `matches-regular-expression rule test`() {
         MatchesRegularExpression("test").apply {
             assertTrue(check("expression", "test"))
             assertThrows(UninitializedPropertyAccessException::class.java) {
@@ -285,16 +296,16 @@ class ValidationRulesTests {
         }
 
         MatchesRegularExpression("\\d{5}\\s\\w{4}") { attr, value -> "$attr value should not be $value" }.apply {
-            check("expression","12345 test or notest" )
+            check("expression", "12345 test or notest")
             assertEquals("expression value should not be 12345 test or notest", error)
         }
     }
 
     @Test
-    fun `check passes if a field matches field_confirm` () {
+    fun `check passes if a field matches field_confirm`() {
         val call = mockk<HttpCall>(relaxed = true)
         every { call.param("password") } returns "secret"
-        every { call.param("password_confirm")} returns "secret"
+        every { call.param("password_confirm") } returns "secret"
         Confirm().apply {
             assertTrue(check("password", call))
             assertThrows(UninitializedPropertyAccessException::class.java) {
@@ -304,11 +315,11 @@ class ValidationRulesTests {
     }
 
     @Test
-    fun `check passes if a field matches confirm_field` () {
+    fun `check passes if a field matches confirm_field`() {
         val call = mockk<HttpCall>(relaxed = true)
         every { call.param("password") } returns "secret"
-        every { call.param("password_confirm")} returns null
-        every { call.param("confirm_password")} returns "secret"
+        every { call.param("password_confirm") } returns null
+        every { call.param("confirm_password") } returns "secret"
         Confirm().apply {
             assertTrue(check("password", call))
             assertThrows(UninitializedPropertyAccessException::class.java) {
@@ -318,10 +329,10 @@ class ValidationRulesTests {
     }
 
     @Test
-    fun `check fails if field_confirm is null and confirm_field is not provided` () {
+    fun `check fails if field_confirm is null and confirm_field is not provided`() {
         val call = mockk<HttpCall>(relaxed = true)
         every { call.param("password") } returns "secret"
-        every { call.param("password_confirm")} returns null
+        every { call.param("password_confirm") } returns null
         Confirm().apply {
             assertFalse(check("password", call))
             assertEquals("The 'password' confirmation does not match.", error)
@@ -329,11 +340,11 @@ class ValidationRulesTests {
     }
 
     @Test
-    fun `check fails if a confirm field is null` () {
+    fun `check fails if a confirm field is null`() {
         val call = mockk<HttpCall>(relaxed = true)
         every { call.param("password") } returns null
-        every { call.param("password_confirm")} returns null
-        every { call.param("confirm_password")} returns null
+        every { call.param("password_confirm") } returns null
+        every { call.param("confirm_password") } returns null
         Confirm().apply {
             assertFalse(check("password", call))
             assertEquals("The 'password' confirmation does not match.", error)
@@ -341,11 +352,11 @@ class ValidationRulesTests {
     }
 
     @Test
-    fun `check fails if a confirm field is blank` () {
+    fun `check fails if a confirm field is blank`() {
         val call = mockk<HttpCall>(relaxed = true)
         every { call.param("password") } returns ""
-        every { call.param("password_confirm")} returns ""
-        every { call.param("confirm_password")} returns ""
+        every { call.param("password_confirm") } returns ""
+        every { call.param("confirm_password") } returns ""
         Confirm().apply {
             assertFalse(check("password", call))
             assertEquals("The 'password' confirmation does not match.", error)
@@ -353,11 +364,11 @@ class ValidationRulesTests {
     }
 
     @Test
-    fun `check fails if a confirm field is whitespaces` () {
+    fun `check fails if a confirm field is whitespaces`() {
         val call = mockk<HttpCall>(relaxed = true)
         every { call.param("password") } returns "   "
-        every { call.param("password_confirm")} returns "   "
-        every { call.param("confirm_password")} returns "   "
+        every { call.param("password_confirm") } returns "   "
+        every { call.param("confirm_password") } returns "   "
         Confirm().apply {
             assertFalse(check("password", call))
             assertEquals("The 'password' confirmation does not match.", error)
@@ -365,10 +376,10 @@ class ValidationRulesTests {
     }
 
     @Test
-    fun `check fails if a field does not match field_confirm` () {
+    fun `check fails if a field does not match field_confirm`() {
         val call = mockk<HttpCall>(relaxed = true)
         every { call.param("password") } returns "secret"
-        every { call.param("password_confirm")} returns "notsecret"
+        every { call.param("password_confirm") } returns "notsecret"
         Confirm().apply {
             assertFalse(check("password", call))
             assertEquals("The 'password' confirmation does not match.", error)
@@ -376,11 +387,11 @@ class ValidationRulesTests {
     }
 
     @Test
-    fun `check fails if a field does not match confirm_field` () {
+    fun `check fails if a field does not match confirm_field`() {
         val call = mockk<HttpCall>(relaxed = true)
         every { call.param("password") } returns "secret"
-        every { call.param("password_confirm")} returns null
-        every { call.param("confirm_password")} returns "notsecret"
+        every { call.param("password_confirm") } returns null
+        every { call.param("confirm_password") } returns "notsecret"
         Confirm().apply {
             assertFalse(check("password", call))
             assertEquals("The 'password' confirmation does not match.", error)
@@ -388,11 +399,11 @@ class ValidationRulesTests {
     }
 
     @Test
-    fun `confirm message check` () {
+    fun `confirm message check`() {
         val call = mockk<HttpCall>(relaxed = true)
         every { call.param("password") } returns "secret"
-        every { call.param("password_confirm")} returns null
-        every { call.param("confirm_password")} returns "notsecret"
+        every { call.param("password_confirm") } returns null
+        every { call.param("confirm_password") } returns "notsecret"
         Confirm() { attr, value -> "$attr value should not be $value" }.apply {
             check("password", call)
             assertEquals("password value should not be notsecret", error)

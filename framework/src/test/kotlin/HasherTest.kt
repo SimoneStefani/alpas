@@ -3,13 +3,17 @@ package dev.alpas.tests
 import dev.alpas.base64Decoded
 import dev.alpas.hashing.HashConfig
 import dev.alpas.hashing.Hasher
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertNotEquals
+import org.junit.jupiter.api.Assertions.assertThrows
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class HasherTest {
     private val hasher = Hasher(TestHashConfig())
+
     @Test
     fun `a string is hashed`() {
         val hash = hasher.hash("password")
