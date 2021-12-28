@@ -22,7 +22,11 @@ open class HttpException(
     }
 }
 
-fun httpExceptionFor(statusCode: Int, message: String? = null, headers: Map<String, String> = emptyMap()): HttpException {
+fun httpExceptionFor(
+    statusCode: Int,
+    message: String? = null,
+    headers: Map<String, String> = emptyMap()
+): HttpException {
     return when (statusCode) {
         HttpStatus.NOT_FOUND_404 -> NotFoundHttpException(message, headers)
         HttpStatus.UNAUTHORIZED_401 -> AuthenticationException(message, headers = headers)

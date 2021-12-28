@@ -11,8 +11,9 @@ interface DatabaseConnection {
     }
 
     fun disconnect()
-    fun isClosed() : Boolean {
+    fun isClosed(): Boolean {
         return false
     }
+
     fun reconnect(): Database
 }

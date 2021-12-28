@@ -87,7 +87,7 @@ class Requestable(private val servletRequest: HttpServletRequest) : RequestableC
     override val cookie: CookieJar by lazy { CookieJar(servletRequest.cookies ?: emptyArray()) }
     override fun header(name: String): String? = servletRequest.getHeader(name)
     override fun headers(name: String): List<String>? = servletRequest.getHeaders(name).toList()
-    override val method by lazy { Method.valueOf(servletRequest.method.toUpperCase()) }
+    override val method by lazy { Method.valueOf(servletRequest.method.uppercase()) }
     override val remoteAddr: String get() = servletRequest.remoteAddr
     override val queryString get() = servletRequest.queryString.ifNotBlank { query -> "?$query" }
     override val uri: String get() = servletRequest.requestURI

@@ -11,7 +11,9 @@ import dev.alpas.session.SessionStoreDriver
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
 import io.mockk.junit5.MockKExtension
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNotEquals
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.extension.ExtendWith
@@ -81,7 +83,10 @@ class EncryptCookiesMiddlewareTest {
     }
 
     @Test
-    fun `cookies from an exception list are not encrypted`(@RelaxedMockK call: HttpCall, @RelaxedMockK env: Environment) {
+    fun `cookies from an exception list are not encrypted`(
+        @RelaxedMockK call: HttpCall,
+        @RelaxedMockK env: Environment
+    ) {
         val encrypter = Encrypter("abcdef")
         val sessionConfig = TestSessionConfig(env)
 

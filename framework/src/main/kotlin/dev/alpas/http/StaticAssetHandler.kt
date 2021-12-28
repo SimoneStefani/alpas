@@ -1,6 +1,10 @@
 package dev.alpas.http
 
-import dev.alpas.*
+import dev.alpas.Application
+import dev.alpas.ResourceLoader
+import dev.alpas.appConfig
+import dev.alpas.isOneOf
+import dev.alpas.make
 import org.eclipse.jetty.server.Request
 import org.eclipse.jetty.server.handler.ResourceHandler
 import org.eclipse.jetty.server.handler.gzip.GzipHandler
@@ -58,7 +62,7 @@ class StaticAssetHandler(app: Application) {
     }
 
     fun handle(request: HttpServletRequest, response: HttpServletResponse): Boolean {
-        if (request.method.toUpperCase().isOneOf("GET", "HEAD")) {
+        if (request.method.uppercase().isOneOf("GET", "HEAD")) {
             val uri = request.requestURI
             val jettyRequest = request.getAttribute("jetty-request") as Request
             gzipHandlers.forEach { handler ->

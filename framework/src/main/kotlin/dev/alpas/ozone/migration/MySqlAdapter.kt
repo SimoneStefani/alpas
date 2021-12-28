@@ -2,7 +2,11 @@ package dev.alpas.ozone.migration
 
 import com.github.ajalt.clikt.output.TermUi.echo
 import dev.alpas.deleteLastLine
-import dev.alpas.ozone.*
+import dev.alpas.ozone.ColumnInfo
+import dev.alpas.ozone.ColumnKey
+import dev.alpas.ozone.ColumnMetadata
+import dev.alpas.ozone.ColumnReferenceConstraint
+import dev.alpas.ozone.OzoneEntity
 import dev.alpas.terminalColors
 import me.liuwj.ktorm.database.Database
 import me.liuwj.ktorm.database.useConnection
@@ -15,11 +19,11 @@ internal class MySqlAdapter(isDryRun: Boolean, quiet: Boolean) : DbAdapter(isDry
     override fun createTable(tableBuilder: TableBuilder, ifNotExists: Boolean) {
         val notExists = if (ifNotExists) " IF NOT EXISTS " else " "
         val sb = StringBuilder("CREATE TABLE$notExists`${tableBuilder.tableName}`")
-        sb.appendln(" (")
+        sb.appendLine(" (")
         val colDef = tableBuilder.columnsToAdd.joinToString(",\n") {
             columnDefinition(it)
         }
-        sb.appendln(colDef)
+        sb.appendLine(colDef)
 
         val keysDef = tableBuilder.keys.joinToString(",\n") {
             columnKeysDefinition(it)
@@ -27,7 +31,7 @@ internal class MySqlAdapter(isDryRun: Boolean, quiet: Boolean) : DbAdapter(isDry
         if (keysDef.isNotEmpty()) {
             sb.append(",")
         }
-        sb.appendln(keysDef)
+        sb.appendLine(keysDef)
 
         val constraintsDef = tableBuilder.constraints.joinToString(",\n") {
             columnConstraints(it, tableBuilder.tableName)
@@ -35,7 +39,7 @@ internal class MySqlAdapter(isDryRun: Boolean, quiet: Boolean) : DbAdapter(isDry
         if (constraintsDef.isNotEmpty()) {
             sb.append(",")
         }
-        sb.appendln(constraintsDef)
+        sb.appendLine(constraintsDef)
 
         sb.append(");")
         execute(sb.toString())
@@ -63,7 +67,7 @@ internal class MySqlAdapter(isDryRun: Boolean, quiet: Boolean) : DbAdapter(isDry
     }
 
     private fun toColTypeName(col: Column<*>): String {
-        return col.sqlType.typeName.toLowerCase()
+        return col.sqlType.typeName.lowercase()
     }
 
     private fun ColumnMetadata?.def(colInfo: ColumnInfo): String {
@@ -154,14 +158,14 @@ internal class MySqlAdapter(isDryRun: Boolean, quiet: Boolean) : DbAdapter(isDry
         val colDef = builder.columnsToAdd.joinToString(",\n", prefix = "\n") {
             "ADD COLUMN ${columnDefinition(it)}"
         }
-        sb.appendln(colDef)
+        sb.appendLine(colDef)
 
         val keysDef = builder.keys.joinToString(",\n") {
             columnKeysDefinition(it)
         }
         if (keysDef.isNotEmpty()) {
             sb.append(",")
-            sb.appendln(keysDef)
+            sb.appendLine(keysDef)
         }
 
         val constraintsDef = builder.constraints.joinToString(",\n") {
@@ -169,7 +173,7 @@ internal class MySqlAdapter(isDryRun: Boolean, quiet: Boolean) : DbAdapter(isDry
         }
         if (constraintsDef.isNotEmpty()) {
             sb.append(",")
-            sb.appendln(constraintsDef)
+            sb.appendLine(constraintsDef)
         }
     }
 
@@ -181,6 +185,6 @@ internal class MySqlAdapter(isDryRun: Boolean, quiet: Boolean) : DbAdapter(isDry
         val dropColumnsDef = builder.columnsToDrop.joinToString(",\n", prefix = "\n") {
             "DROP COLUMN $it"
         }
-        sb.appendln(dropColumnsDef)
+        sb.appendLine(dropColumnsDef)
     }
 }

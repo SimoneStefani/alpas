@@ -1,10 +1,14 @@
 package dev.alpas.queue.database
 
 import com.github.ajalt.clikt.output.TermUi
-import dev.alpas.*
+import dev.alpas.Container
+import dev.alpas.Environment
+import dev.alpas.deleteLastLine
+import dev.alpas.make
 import dev.alpas.queue.ConnectionConfig
 import dev.alpas.queue.Queue
 import dev.alpas.queue.QueueConnection
+import dev.alpas.terminalColors
 import me.liuwj.ktorm.dsl.count
 import java.sql.SQLSyntaxErrorException
 

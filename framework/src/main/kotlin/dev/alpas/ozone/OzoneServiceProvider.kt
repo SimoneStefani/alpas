@@ -1,8 +1,20 @@
 package dev.alpas.ozone
 
-import dev.alpas.*
+import dev.alpas.Application
+import dev.alpas.ServiceProvider
 import dev.alpas.console.Command
-import dev.alpas.ozone.console.*
+import dev.alpas.make
+import dev.alpas.makeElse
+import dev.alpas.ozone.console.DatabaseCreateCommand
+import dev.alpas.ozone.console.DatabaseMigrateCommand
+import dev.alpas.ozone.console.DatabaseRefreshCommand
+import dev.alpas.ozone.console.DatabaseRollbackCommand
+import dev.alpas.ozone.console.DatabaseSeedCommand
+import dev.alpas.ozone.console.MakeEntityCommand
+import dev.alpas.ozone.console.MakeFactoryCommand
+import dev.alpas.ozone.console.MakeMigrationCommand
+import dev.alpas.ozone.console.MakeSeederCommand
+import dev.alpas.tryMake
 
 class OzoneServiceProvider : ServiceProvider {
     override fun register(app: Application) {

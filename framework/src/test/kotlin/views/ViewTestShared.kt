@@ -2,7 +2,11 @@ package dev.alpas.tests.views
 
 import com.mitchellbosecke.pebble.loader.Loader
 import com.mitchellbosecke.pebble.loader.StringLoader
-import dev.alpas.*
+import dev.alpas.AppBase
+import dev.alpas.Application
+import dev.alpas.Container
+import dev.alpas.DefaultContainer
+import dev.alpas.ServiceProvider
 import dev.alpas.view.PebbleViewRenderer
 import dev.alpas.view.ViewConfig
 import dev.alpas.view.ViewRenderer

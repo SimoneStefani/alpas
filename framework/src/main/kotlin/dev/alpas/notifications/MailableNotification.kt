@@ -4,5 +4,5 @@ import dev.alpas.mailing.MailMessage
 
 interface MailableNotification<T : Notifiable> : Notification<T> {
     fun toMail(notifiable: T): MailMessage
-    fun mailDriverName(notifiable: T) : String? = null
+    fun mailDriverName(notifiable: T): String? = null
 }

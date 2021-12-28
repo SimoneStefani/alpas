@@ -1,8 +1,12 @@
 package dev.alpas.tests.commands
 
-import dev.alpas.*
+import dev.alpas.AppConfig
+import dev.alpas.Environment
+import dev.alpas.RESOURCES_DIRS
+import dev.alpas.SRC_DIR_KEY
 import dev.alpas.console.LinkWebCommand
 import dev.alpas.tests.scope
+import dev.alpas.toPath
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
 import io.mockk.junit5.MockKExtension
@@ -22,7 +26,11 @@ import java.nio.file.Paths
 class LinkWebTest {
     @Suppress("UNCHECKED_CAST")
     @Test
-    fun `creates a linked web directory`(@TempDir tempDir: Path, @RelaxedMockK env: Environment, @RelaxedMockK config: AppConfig) {
+    fun `creates a linked web directory`(
+        @TempDir tempDir: Path,
+        @RelaxedMockK env: Environment,
+        @RelaxedMockK config: AppConfig
+    ) {
         val rootPath = tempDir.toAbsolutePath().toString()
 
         val storagePath = Paths.get(rootPath, "storage").toAbsolutePath().toString()

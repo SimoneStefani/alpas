@@ -16,12 +16,12 @@ class MakeFactoryCommand(srcPackage: String) :
     override fun populateOutputFile(filename: String, actualname: String, vararg parentDirs: String): OutputFile {
         // append SUFFIX to the filename if it doesn't end with the SUFFIX OR the filename itself is not called SUFFIX
         val outputFilename =
-            if (filename.toLowerCase() != SUFFIX && filename.toLowerCase()
+            if (filename.lowercase() != SUFFIX && filename.lowercase()
                     .endsWith(SUFFIX)
             ) filename else "${filename}${SUFFIX.toPascalCase()}"
         val entitiesPackage = makePackageName("entities")
         val entityName =
-            if (actualname.toLowerCase() != SUFFIX) actualname.removeSuffix(SUFFIX.toPascalCase()) else actualname.toPascalCase()
+            if (actualname.lowercase() != SUFFIX) actualname.removeSuffix(SUFFIX.toPascalCase()) else actualname.toPascalCase()
         return OutputFile()
             .target(File(sourceOutputPath("database", "factories", *parentDirs), "${outputFilename.toPascalCase()}.kt"))
             .packageName(makePackageName("database", "factories", *parentDirs))

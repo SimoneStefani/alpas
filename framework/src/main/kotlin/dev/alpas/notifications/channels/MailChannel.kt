@@ -8,7 +8,8 @@ import dev.alpas.notifications.Notification
 import dev.alpas.queue.QueueDispatcher
 import kotlinx.coroutines.runBlocking
 
-open class MailChannel(private val queueDispatcher: QueueDispatcher, private val mailConfig: MailConfig) : NotificationChannel {
+open class MailChannel(private val queueDispatcher: QueueDispatcher, private val mailConfig: MailConfig) :
+    NotificationChannel {
     override fun <T : Notifiable> send(notification: Notification<T>, notifiable: T) {
         val mailableNotification = notification as MailableNotification<T>
         val message = mailableNotification.toMail(notifiable).apply { render(mailConfig.renderer()) }

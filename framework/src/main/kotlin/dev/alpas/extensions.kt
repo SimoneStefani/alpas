@@ -21,7 +21,8 @@ import java.security.SecureRandom
 import java.time.LocalDateTime
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
-import java.util.*
+import java.util.Base64
+import java.util.Date
 import java.util.concurrent.CompletableFuture
 import javax.crypto.Mac
 import javax.crypto.spec.SecretKeySpec
@@ -176,7 +177,7 @@ inline infix fun String?.whenNotNullOrEmpty(thenDo: (String) -> String?): String
     if (this.isNullOrEmpty()) this else thenDo(this)
 
 inline fun String?.ifNotBlank(defaultValue: (String) -> String): String =
-    if (!isNullOrBlank()) defaultValue(this!!) else ""
+    if (!isNullOrBlank()) defaultValue(this) else ""
 
 inline infix fun <R : Any> String?.whenNotNullOrEmpty(thenDo: (String) -> R): R? =
     if (this.isNullOrEmpty()) null else thenDo(this)

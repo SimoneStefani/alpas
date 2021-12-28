@@ -1,6 +1,11 @@
 package dev.alpas.view
 
-import dev.alpas.*
+import dev.alpas.AppConfig
+import dev.alpas.Application
+import dev.alpas.JsonSerializer
+import dev.alpas.ResourceLoader
+import dev.alpas.config
+import dev.alpas.make
 import uy.klutter.core.common.mustStartWith
 
 class Mix(private val app: Application) {

@@ -6,7 +6,11 @@ import dev.alpas.ozone.increments
 import me.liuwj.ktorm.dsl.delete
 import me.liuwj.ktorm.dsl.eq
 import me.liuwj.ktorm.dsl.max
-import me.liuwj.ktorm.entity.*
+import me.liuwj.ktorm.entity.add
+import me.liuwj.ktorm.entity.aggregateColumns
+import me.liuwj.ktorm.entity.asSequenceWithoutReferences
+import me.liuwj.ktorm.entity.findAll
+import me.liuwj.ktorm.entity.findList
 import me.liuwj.ktorm.schema.int
 import me.liuwj.ktorm.schema.varchar
 

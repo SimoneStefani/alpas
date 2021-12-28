@@ -1,6 +1,10 @@
 package dev.alpas.ozone
 
-import me.liuwj.ktorm.schema.*
+import me.liuwj.ktorm.schema.BaseTable
+import me.liuwj.ktorm.schema.IntSqlType
+import me.liuwj.ktorm.schema.LongSqlType
+import me.liuwj.ktorm.schema.SqlType
+import me.liuwj.ktorm.schema.VarcharSqlType
 import java.sql.PreparedStatement
 import java.sql.ResultSet
 import java.sql.Types

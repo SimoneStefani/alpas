@@ -2,8 +2,12 @@ package dev.alpas.ozone.console
 
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.arguments.optional
-import dev.alpas.*
+import dev.alpas.Application
+import dev.alpas.PackageClassLoader
+import dev.alpas.asMagenta
 import dev.alpas.console.Command
+import dev.alpas.deleteLastLine
+import dev.alpas.load
 import dev.alpas.ozone.Seeder
 
 class DatabaseSeedCommand(private val app: Application) : Command(name = "db:seed", help = "Seed a database") {

@@ -31,7 +31,7 @@ class Router(
 
     internal fun routeFor(methodName: String, uri: String): RouteResult {
         return router.result().also {
-            router.route(methodName.toUpperCase(), uri, it)
+            router.route(methodName.uppercase(), uri, it)
         }
     }
 

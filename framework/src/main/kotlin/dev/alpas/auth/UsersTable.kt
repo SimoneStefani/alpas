@@ -13,7 +13,6 @@ import me.liuwj.ktorm.schema.Column
 import me.liuwj.ktorm.schema.SqlType
 import me.liuwj.ktorm.schema.timestamp
 import me.liuwj.ktorm.schema.varchar
-import java.util.*
 
 open class BaseUsersTable<E : BaseUser<E>> : OzoneTable<E>("users"), UserProvider {
     open val id by bigIncrements()

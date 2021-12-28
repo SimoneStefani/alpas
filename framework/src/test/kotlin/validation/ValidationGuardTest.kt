@@ -1,7 +1,13 @@
 package dev.alpas.tests.validation
 
 import dev.alpas.http.HttpCall
-import dev.alpas.validation.*
+import dev.alpas.validation.Email
+import dev.alpas.validation.ErrorBag
+import dev.alpas.validation.Max
+import dev.alpas.validation.Min
+import dev.alpas.validation.Required
+import dev.alpas.validation.Rule
+import dev.alpas.validation.ValidationGuard
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
 import io.mockk.junit5.MockKExtension

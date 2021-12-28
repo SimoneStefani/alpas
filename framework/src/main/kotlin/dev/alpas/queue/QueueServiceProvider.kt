@@ -26,6 +26,11 @@ open class QueueServiceProvider : ServiceProvider {
     }
 
     override fun commands(app: Application): List<Command> {
-        return listOf(QueueWorkCommand(app), MakeJobCommand(app.srcPackage), QueueTablesCommand(app.srcPackage), QueueRestartCommand(app))
+        return listOf(
+            QueueWorkCommand(app),
+            MakeJobCommand(app.srcPackage),
+            QueueTablesCommand(app.srcPackage),
+            QueueRestartCommand(app)
+        )
     }
 }

@@ -98,6 +98,6 @@ class CorsHandler(app: Application) {
     private fun confirmMethod(req: HttpServletRequest): Boolean {
         val allowedMethods = corsConfig.allowedMethods
         if (allowedMethods.contains("*")) return true
-        return allowedMethods.contains(req.method.toUpperCase())
+        return allowedMethods.contains(req.method.uppercase())
     }
 }

@@ -1,7 +1,13 @@
 package dev.alpas.ozone.migration
 
 import dev.alpas.isOneOf
-import dev.alpas.ozone.*
+import dev.alpas.ozone.ColumnInfo
+import dev.alpas.ozone.ColumnKey
+import dev.alpas.ozone.ColumnMetadata
+import dev.alpas.ozone.ColumnReferenceConstraint
+import dev.alpas.ozone.OzoneEntity
+import dev.alpas.ozone.OzoneTable
+import dev.alpas.ozone.isVarChar
 import me.liuwj.ktorm.schema.Column
 import java.sql.Types
 
@@ -22,11 +28,11 @@ open class TableBuilder(val tableName: String, tableConstraints: Set<ColumnRefer
 
     fun uniqueKey(columnName: String, name: String? = null) {
         keys.add(
-                ColumnKey(
-                        "UNIQUE KEY",
-                        setOf(columnName),
-                        name ?: "`${tableName}_${columnName}_unique`"
-                )
+            ColumnKey(
+                "UNIQUE KEY",
+                setOf(columnName),
+                name ?: "`${tableName}_${columnName}_unique`"
+            )
         )
     }
 
@@ -36,11 +42,11 @@ open class TableBuilder(val tableName: String, tableConstraints: Set<ColumnRefer
 
     fun addIndex(columnNames: Iterable<String>, name: String? = null) {
         keys.add(
-                ColumnKey(
-                        "KEY",
-                        columnNames.toSet(),
-                        name ?: "`${tableName}_${columnNames.joinToString("_")}_index`"
-                )
+            ColumnKey(
+                "KEY",
+                columnNames.toSet(),
+                name ?: "`${tableName}_${columnNames.joinToString("_")}_index`"
+            )
         )
     }
 
@@ -65,9 +71,9 @@ open class TableBuilder(val tableName: String, tableConstraints: Set<ColumnRefer
     }
 
     fun addReference(
-            foreignKey: String,
-            tableToRefer: String,
-            columnToRefer: String? = null
+        foreignKey: String,
+        tableToRefer: String,
+        columnToRefer: String? = null
     ): ColumnReferenceConstraint {
         return ColumnReferenceConstraint(foreignKey, tableToRefer, columnToRefer ?: "id").also {
             builderConstraints.add(it)
@@ -75,18 +81,18 @@ open class TableBuilder(val tableName: String, tableConstraints: Set<ColumnRefer
     }
 
     fun <E : OzoneEntity<E>> addReference(
-            tableToRefer: OzoneTable<E>,
-            foreignColumn: Column<*>,
-            columnToRefer: Column<*>? = null
+        tableToRefer: OzoneTable<E>,
+        foreignColumn: Column<*>,
+        columnToRefer: Column<*>? = null
     ): ColumnReferenceConstraint {
         ensureReferenceIntegrity(foreignColumn, tableToRefer, columnToRefer)
         return addReference(foreignColumn.name, tableToRefer.tableName, columnToRefer?.name)
     }
 
     private fun <E : OzoneEntity<E>> ensureReferenceIntegrity(
-            foreignColumn: Column<*>,
-            tableToRefer: OzoneTable<E>,
-            columnToRefer: Column<*>?
+        foreignColumn: Column<*>,
+        tableToRefer: OzoneTable<E>,
+        columnToRefer: Column<*>?
     ) {
         // If the referencing column is unsigned but the foreign key column isn't then adding constraint
         // fails with not so friendly error message. We'll check if that's the case here and throw an
@@ -96,7 +102,7 @@ open class TableBuilder(val tableName: String, tableConstraints: Set<ColumnRefer
             val referredColName = columnToRefer?.name ?: "id"
 
             val foreignKeyColumnIsUnsigned =
-                    columnsToAdd.first { it.col.name == foreignColName }.meta?.unsigned ?: false
+                columnsToAdd.first { it.col.name == foreignColName }.meta?.unsigned ?: false
             val referredColumnIsUnsigned = tableToRefer.metadataMap[referredColName]?.unsigned == true
 
             check(referredColumnIsUnsigned == foreignKeyColumnIsUnsigned) {

@@ -33,7 +33,10 @@ class RedirectResponse(
 
     private fun sendRedirect(call: HttpCall) {
         Pipeline<RedirectResponse>().send(this).through(call.redirect().filters()).then { response ->
-            (call.servletResponse as? org.eclipse.jetty.server.Response)?.sendRedirect(response.statusCode, response.location)
+            (call.servletResponse as? org.eclipse.jetty.server.Response)?.sendRedirect(
+                response.statusCode,
+                response.location
+            )
         }
     }
 

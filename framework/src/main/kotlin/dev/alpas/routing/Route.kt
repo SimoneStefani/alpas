@@ -134,7 +134,7 @@ class Route(
     }
 
     private fun addMiddlewareGroup(groupName: String) {
-        if(!skippedMiddlewareGroups.contains(groupName)) {
+        if (!skippedMiddlewareGroups.contains(groupName)) {
             middlewareGroups.add(groupName)
         }
     }

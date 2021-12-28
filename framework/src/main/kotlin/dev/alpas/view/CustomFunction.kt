@@ -35,8 +35,10 @@ class CustomFunction(
             )
         )
         val rendered =
-            viewRenderer.renderTemplate(text,
-                SharedDataBag(), (context as EvaluationContextImpl).allScopedArgs())
+            viewRenderer.renderTemplate(
+                text,
+                SharedDataBag(), (context as EvaluationContextImpl).allScopedArgs()
+            )
         return SafeString(rendered)
     }
 }

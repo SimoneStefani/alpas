@@ -3,7 +3,7 @@ package dev.alpas.auth.console.stubs
 internal class Stubs {
     companion object {
         fun stubFor(name: String?): String {
-            return when (name?.toLowerCase()) {
+            return when (name?.lowercase()) {
                 "view.header" -> headerViewStub()
                 "view.login" -> loginViewStub()
                 "view.register" -> registerViewStub()

@@ -29,9 +29,11 @@ class MakeControllerCommand(srcPackage: String) :
                     val path = sourceOutputPath()?.relativize(it.target.path)
                     echo("${green(" ✓")} ${brightGreen(path!!)}")
                     echo(
-                        "${yellow(" Don't forget to add")} ${blue(
-                            "resources<${it.target.nameWithoutExtension}>()"
-                        )} ${yellow("to your routes.")}"
+                        "${yellow(" Don't forget to add")} ${
+                            blue(
+                                "resources<${it.target.nameWithoutExtension}>()"
+                            )
+                        } ${yellow("to your routes.")}"
                     )
                 }
             } else {

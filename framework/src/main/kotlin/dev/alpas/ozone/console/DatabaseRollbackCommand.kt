@@ -9,7 +9,14 @@ class DatabaseRollbackCommand(private val container: Container, srcPackage: Stri
 
     override fun run() {
         println()
-        MigrationRunner(container, File(migrationsDirectory.toUri()), dryRun, migrationClassesScanner, useFilenames, quiet).rollback()
+        MigrationRunner(
+            container,
+            File(migrationsDirectory.toUri()),
+            dryRun,
+            migrationClassesScanner,
+            useFilenames,
+            quiet
+        ).rollback()
         withColors {
             println()
             echo(yellow("https://alpas.dev/docs/migrations"))

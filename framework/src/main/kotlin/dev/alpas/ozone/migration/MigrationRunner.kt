@@ -2,8 +2,13 @@ package dev.alpas.ozone.migration
 
 import com.github.ajalt.clikt.output.TermUi.echo
 import com.github.ajalt.mordant.TermColors
-import dev.alpas.*
+import dev.alpas.Container
+import dev.alpas.deleteLastLine
 import dev.alpas.extensions.toPascalCase
+import dev.alpas.load
+import dev.alpas.printAsError
+import dev.alpas.printAsInfo
+import dev.alpas.terminalColors
 import io.github.classgraph.ScanResult
 import java.io.File
 
@@ -92,31 +97,33 @@ internal class MigrationRunner(
 
     private fun migrationsToRunByMigrationNames(): List<Migration> {
         val migrations = mutableListOf<Migration>()
-        migrationClassesScanner.getSubclasses(Migration::class.java.name).filter { !it.isAbstract }.forEach { classInfo ->
-            val migration = classInfo.load<Migration>()
-            val name = migration.name
-            if (name != null && !migrationRepo.isMigrated(name)) {
-                migration.givenName = name
-                migration.adapter = adapter
-                migrations.add(migration)
+        migrationClassesScanner.getSubclasses(Migration::class.java.name).filter { !it.isAbstract }
+            .forEach { classInfo ->
+                val migration = classInfo.load<Migration>()
+                val name = migration.name
+                if (name != null && !migrationRepo.isMigrated(name)) {
+                    migration.givenName = name
+                    migration.adapter = adapter
+                    migrations.add(migration)
+                }
             }
-        }
         return migrations
     }
 
     private fun migrationsToRunByFilenames(): List<Migration> {
         val migrations = mutableListOf<Migration>()
-        migrationClassesScanner.getSubclasses(Migration::class.java.name).filter { !it.isAbstract }.forEach { classInfo ->
-            // derive name of the migration from the corresponding filename
-            val filename = migrationFiles.firstOrNull { name -> name.toPascalCase().endsWith(classInfo.simpleName) }
-            if (filename != null && !migrationRepo.isMigrated(filename)) {
-                classInfo.load<Migration>().also { migration ->
-                    migration.givenName = filename
-                    migration.adapter = adapter
-                    migrations.add(migration)
+        migrationClassesScanner.getSubclasses(Migration::class.java.name).filter { !it.isAbstract }
+            .forEach { classInfo ->
+                // derive name of the migration from the corresponding filename
+                val filename = migrationFiles.firstOrNull { name -> name.toPascalCase().endsWith(classInfo.simpleName) }
+                if (filename != null && !migrationRepo.isMigrated(filename)) {
+                    classInfo.load<Migration>().also { migration ->
+                        migration.givenName = filename
+                        migration.adapter = adapter
+                        migrations.add(migration)
+                    }
                 }
             }
-        }
         return migrations
     }
 
@@ -143,16 +150,18 @@ internal class MigrationRunner(
 
     private fun migrationsToRollbackByMigrationNames(migrationNamesToRollback: List<String>): List<Migration> {
         val migrations = mutableListOf<Migration>()
-        migrationClassesScanner.getSubclasses(Migration::class.java.name).filter { !it.isAbstract }.forEach { classInfo ->
-            val migration = classInfo.load<Migration>()
-            // If this migration is in the list of migrationNamesToRollback, we need to mark it for rolling back
-            val name = migrationNamesToRollback.firstOrNull { name -> migration.name != null && name == migration.name }
-            if (name != null) {
-                migration.givenName = name
-                migration.adapter = adapter
-                migrations.add(migration)
+        migrationClassesScanner.getSubclasses(Migration::class.java.name).filter { !it.isAbstract }
+            .forEach { classInfo ->
+                val migration = classInfo.load<Migration>()
+                // If this migration is in the list of migrationNamesToRollback, we need to mark it for rolling back
+                val name =
+                    migrationNamesToRollback.firstOrNull { name -> migration.name != null && name == migration.name }
+                if (name != null) {
+                    migration.givenName = name
+                    migration.adapter = adapter
+                    migrations.add(migration)
+                }
             }
-        }
         return migrations
     }
 
@@ -160,18 +169,19 @@ internal class MigrationRunner(
         // mark all the migration files that contain migration classes. These migrations will be removed.
         val migrationFilesToRollback = migrationFiles.filter { migrationNamesToRollback.contains(it) }
         val migrations = mutableListOf<Migration>()
-        migrationClassesScanner.getSubclasses(Migration::class.java.name).filter { !it.isAbstract }.forEach { classInfo ->
-            // check if this class is in the list of migrations that are marked to be removed
-            val filename =
-                migrationFilesToRollback.firstOrNull { name -> name.toPascalCase().endsWith(classInfo.simpleName) }
-            if (filename != null) {
-                classInfo.load<Migration>().also { migration ->
-                    migration.givenName = filename
-                    migration.adapter = adapter
-                    migrations.add(migration)
+        migrationClassesScanner.getSubclasses(Migration::class.java.name).filter { !it.isAbstract }
+            .forEach { classInfo ->
+                // check if this class is in the list of migrations that are marked to be removed
+                val filename =
+                    migrationFilesToRollback.firstOrNull { name -> name.toPascalCase().endsWith(classInfo.simpleName) }
+                if (filename != null) {
+                    classInfo.load<Migration>().also { migration ->
+                        migration.givenName = filename
+                        migration.adapter = adapter
+                        migrations.add(migration)
+                    }
                 }
             }
-        }
         return migrations
     }
 

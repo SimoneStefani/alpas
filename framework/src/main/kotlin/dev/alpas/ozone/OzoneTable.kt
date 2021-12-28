@@ -2,12 +2,28 @@ package dev.alpas.ozone
 
 import dev.alpas.extensions.toCamelCase
 import dev.alpas.extensions.toSnakeCase
-import me.liuwj.ktorm.dsl.*
+import me.liuwj.ktorm.dsl.AssignmentsBuilder
+import me.liuwj.ktorm.dsl.combineConditions
+import me.liuwj.ktorm.dsl.eq
+import me.liuwj.ktorm.dsl.insertAndGenerateKey
+import me.liuwj.ktorm.dsl.isNull
+import me.liuwj.ktorm.dsl.update
 import me.liuwj.ktorm.entity.findList
 import me.liuwj.ktorm.entity.findOne
 import me.liuwj.ktorm.expression.ArgumentExpression
 import me.liuwj.ktorm.expression.ColumnAssignmentExpression
-import me.liuwj.ktorm.schema.*
+import me.liuwj.ktorm.schema.BaseTable
+import me.liuwj.ktorm.schema.Column
+import me.liuwj.ktorm.schema.ColumnDeclaring
+import me.liuwj.ktorm.schema.DecimalSqlType
+import me.liuwj.ktorm.schema.DoubleSqlType
+import me.liuwj.ktorm.schema.FloatSqlType
+import me.liuwj.ktorm.schema.InstantSqlType
+import me.liuwj.ktorm.schema.NestedBinding
+import me.liuwj.ktorm.schema.SqlType
+import me.liuwj.ktorm.schema.Table
+import me.liuwj.ktorm.schema.int
+import me.liuwj.ktorm.schema.long
 import java.time.Instant
 import java.time.temporal.Temporal
 import kotlin.collections.component1
@@ -263,7 +279,11 @@ abstract class OzoneTable<E : OzoneEntity<E>>(
     /**
      * Automatically register and bind a column under the given name and type.
      */
-    internal fun <T : Any> registerAndBind(name: String, type: SqlType<T>, autoBind: Boolean = true): ColumnRegistration<T> {
+    internal fun <T : Any> registerAndBind(
+        name: String,
+        type: SqlType<T>,
+        autoBind: Boolean = true
+    ): ColumnRegistration<T> {
         return registerColumn(name, type).also {
             if (autoBind || shouldAutoBind(name)) {
                 autoBind(it)
@@ -363,7 +383,10 @@ abstract class OzoneTable<E : OzoneEntity<E>>(
  * @return A new entity.
  */
 @Suppress("UNCHECKED_CAST")
-fun <E : OzoneEntity<E>, T : OzoneTable<E>> T.create(attributes: Map<String, Any?>, timestamp: Instant? = Instant.now()): E {
+fun <E : OzoneEntity<E>, T : OzoneTable<E>> T.create(
+    attributes: Map<String, Any?>,
+    timestamp: Instant? = Instant.now()
+): E {
     val table = this
     val id = this.insertAndGenerateKey { builder ->
         val actualAttributes = attributes.toMutableMap()
@@ -484,7 +507,10 @@ fun <T : OzoneEntity<T>> OzoneTable<T>.propertyNamesToColumnNames(): Map<String,
     }.toMap()
 }
 
-@Deprecated("Deprecated", ReplaceWith("intReference(referenceTable, localColumnName, to, unsigned, onDelete, selector)"))
+@Deprecated(
+    "Deprecated",
+    ReplaceWith("intReference(referenceTable, localColumnName, to, unsigned, onDelete, selector)")
+)
 fun <E : OzoneEntity<E>, R : OzoneEntity<R>> OzoneTable<E>.intReference(
     localColumnName: String,
     referenceTable: OzoneTable<R>,
@@ -515,7 +541,10 @@ fun <E : OzoneEntity<E>, R : OzoneEntity<R>> OzoneTable<E>.intReference(
     }
 }
 
-@Deprecated("Deprecated", ReplaceWith("longReference(referenceTable, localColumnName, to, unsigned, onDelete, selector)"))
+@Deprecated(
+    "Deprecated",
+    ReplaceWith("longReference(referenceTable, localColumnName, to, unsigned, onDelete, selector)")
+)
 fun <E : OzoneEntity<E>, R : OzoneEntity<R>> OzoneTable<E>.longReference(
     localColumnName: String,
     referenceTable: OzoneTable<R>,

@@ -13,7 +13,10 @@ import dev.alpas.routing.middleware.SignedRequestMiddleware
 import dev.alpas.tests.TestController
 import dev.alpas.tests.controllerMethod
 import dev.alpas.tests.withRouter
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 
@@ -421,7 +424,7 @@ class RoutesTest {
         ).forEach { method ->
             val route = router.routes.find { it.method == method }
             assertNotNull(route)
-            assertEquals("${route?.path?.toLowerCase()}", route?.path)
+            assertEquals("${route?.path?.lowercase()}", route?.path)
         }
     }
 
@@ -441,8 +444,8 @@ class RoutesTest {
         ).forEach { method ->
             val route = router.routes.find { it.method == method }
             assertNotNull(route)
-            assertEquals("${route?.path?.toLowerCase()}", route?.path)
-            assertEquals("test${method.toString().toLowerCase()}", (route?.handler as ControllerHandler).method)
+            assertEquals("${route?.path?.lowercase()}", route?.path)
+            assertEquals("test${method.toString().lowercase()}", (route?.handler as ControllerHandler).method)
             assertEquals(
                 "dev.alpas.tests.routing.TypedController",
                 (route.handler as ControllerHandler).controller.qualifiedName

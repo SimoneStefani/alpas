@@ -5,7 +5,13 @@ package dev.alpas.ozone
 import dev.alpas.extensions.toSnakeCase
 import me.liuwj.ktorm.dsl.and
 import me.liuwj.ktorm.dsl.eq
-import me.liuwj.ktorm.entity.*
+import me.liuwj.ktorm.entity.Entity
+import me.liuwj.ktorm.entity.EntitySequence
+import me.liuwj.ktorm.entity.asSequence
+import me.liuwj.ktorm.entity.filter
+import me.liuwj.ktorm.entity.findList
+import me.liuwj.ktorm.entity.findOne
+import me.liuwj.ktorm.entity.toList
 import me.liuwj.ktorm.schema.BaseTable
 import me.liuwj.ktorm.schema.Column
 import me.liuwj.ktorm.schema.ColumnDeclaring

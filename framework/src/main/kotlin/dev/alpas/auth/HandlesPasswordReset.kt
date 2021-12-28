@@ -7,8 +7,17 @@ import dev.alpas.http.HttpCall
 import dev.alpas.http.RequestError
 import dev.alpas.make
 import dev.alpas.orAbort
-import dev.alpas.validation.*
-import me.liuwj.ktorm.dsl.*
+import dev.alpas.validation.Confirm
+import dev.alpas.validation.Email
+import dev.alpas.validation.ErrorBag
+import dev.alpas.validation.Min
+import dev.alpas.validation.Required
+import dev.alpas.validation.Rule
+import me.liuwj.ktorm.dsl.delete
+import me.liuwj.ktorm.dsl.eq
+import me.liuwj.ktorm.dsl.select
+import me.liuwj.ktorm.dsl.update
+import me.liuwj.ktorm.dsl.where
 
 interface HandlesPasswordReset {
     fun afterResetRedirectTo(call: HttpCall) = "/"

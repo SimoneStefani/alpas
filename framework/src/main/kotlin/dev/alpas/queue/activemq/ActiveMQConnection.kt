@@ -12,7 +12,7 @@ import java.time.Duration
 @Suppress("unused")
 open class ActiveMQConnection(env: Environment, config: ConnectionConfig? = null) :
     QueueConnection {
-    open val queueNamespace = env("ACTIVEMQ_NAMESPACE") ?: env("APP_NAME")!!.toLowerCase()
+    open val queueNamespace = env("ACTIVEMQ_NAMESPACE") ?: env("APP_NAME")!!.lowercase()
     open val username = config?.username ?: env("ACTIVEMQ_USERNAME", "")
     open val password = config?.password ?: env("ACTIVEMQ_PASSWORD", "")
     open val host = config?.host ?: env("ACTIVEMQ_HOST", "localhost")

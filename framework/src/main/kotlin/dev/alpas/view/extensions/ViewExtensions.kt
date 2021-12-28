@@ -35,7 +35,7 @@ internal class PebbleExtensions : PebbleExtension {
         customFunctions.add("spoof", listOf("method")) {
             val method = args?.get("method")
                 ?: throw Exception("spoof() function requires the name of the method to spoof - either PUT, PATCh, or DELETE. Called from (${this.templateName} line no. $lineNumber)")
-            """<input type="hidden" name="_method" value="${method.toString().toLowerCase()}">"""
+            """<input type="hidden" name="_method" value="${method.toString().lowercase()}">"""
         }
     }
 
@@ -77,7 +77,7 @@ internal class PebbleExtensions : PebbleExtension {
             config::class.memberProperties.map { property ->
                 val name = property.name
                 val value = readInstanceProperty(config, property as KProperty1<Any, *>)
-                "${config::class.simpleName?.replace("Config", "")?.toLowerCase()}.$name" to value
+                "${config::class.simpleName?.replace("Config", "")?.lowercase()}.$name" to value
             }
         }.toMap()
 

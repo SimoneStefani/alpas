@@ -7,6 +7,7 @@ import dev.alpas.secureRandomString
 
 class Hasher(private val config: HashConfig) {
     private val argon by lazy { Argon2Factory.create() }
+
     // hash the given value
     fun hash(value: CharArray, encode: Boolean = true): String {
         try {

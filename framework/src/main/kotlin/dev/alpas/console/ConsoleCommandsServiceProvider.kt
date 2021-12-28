@@ -1,6 +1,10 @@
 package dev.alpas.console
 
-import dev.alpas.*
+import dev.alpas.AppConfig
+import dev.alpas.Application
+import dev.alpas.ServiceProvider
+import dev.alpas.appConfig
+import dev.alpas.makeElse
 
 class ConsoleCommandsServiceProvider(private val args: Array<String>) : ServiceProvider {
     override fun register(app: Application) {

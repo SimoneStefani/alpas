@@ -22,7 +22,7 @@ internal class RouteFunction : Function {
         try {
             val name = args?.get("name") as String?
                 ?: throw Exception("route() function requires the name of the route.")
-            val urlGenerator= ctx.call.urlGenerator
+            val urlGenerator = ctx.call.urlGenerator
             return urlGenerator.route(name, args?.get("params") as? Map<String, Any>)
         } catch (e: Exception) {
             throw Exception("${e.message}. Called from (${self.name} line no. $line)")

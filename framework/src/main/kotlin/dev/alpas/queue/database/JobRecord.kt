@@ -1,6 +1,10 @@
 package dev.alpas.queue.database
 
-import dev.alpas.ozone.*
+import dev.alpas.ozone.OzoneEntity
+import dev.alpas.ozone.OzoneTable
+import dev.alpas.ozone.bigIncrements
+import dev.alpas.ozone.longText
+import dev.alpas.ozone.tinyInt
 import me.liuwj.ktorm.schema.long
 import me.liuwj.ktorm.schema.timestamp
 import me.liuwj.ktorm.schema.varchar

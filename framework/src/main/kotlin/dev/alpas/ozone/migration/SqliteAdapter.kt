@@ -9,11 +9,11 @@ internal class SqliteAdapter(isDryRun: Boolean, quiet: Boolean) : DbAdapter(isDr
     override fun createTable(tableBuilder: TableBuilder, ifNotExists: Boolean) {
         val notExists = if (ifNotExists) " IF NOT EXISTS " else " "
         val sb = StringBuilder("CREATE TABLE$notExists${tableBuilder.tableName}")
-        sb.appendln(" (")
+        sb.appendLine(" (")
         val colDef = tableBuilder.columnsToAdd.joinToString(",\n") {
             columnDefinition(it)
         }
-        sb.appendln(colDef)
+        sb.appendLine(colDef)
         sb.append(");")
         execute(sb.toString())
     }
@@ -39,7 +39,7 @@ internal class SqliteAdapter(isDryRun: Boolean, quiet: Boolean) : DbAdapter(isDr
         if (colInfo.col.sqlType.typeCode == java.sql.Types.INTEGER || colInfo.meta?.autoIncrement == true) {
             return "integer"
         }
-        return colInfo.col.sqlType.typeName.toLowerCase()
+        return colInfo.col.sqlType.typeName.lowercase()
     }
 
     private fun ColumnMetadata?.def(): String {

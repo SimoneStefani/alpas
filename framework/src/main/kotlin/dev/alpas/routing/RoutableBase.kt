@@ -111,16 +111,20 @@ abstract class RoutableBase(
         add(Method.GET, path, ControllerHandler(controller, method.name), middleware).name(method.name.toKebabCase())
 
     @JvmName("guardedGet")
-    inline fun <reified C : Controller, G : ValidationGuard> get(method: KFunction2<C, G, Unit>) = get("", C::class, method.name)
+    inline fun <reified C : Controller, G : ValidationGuard> get(method: KFunction2<C, G, Unit>) =
+        get("", C::class, method.name)
 
     @JvmName("guardedGet")
-    fun <C : Controller, G : ValidationGuard> get(controller: KClass<C>, method: KFunction2<C, G, Unit>) = get("", controller, method.name)
+    fun <C : Controller, G : ValidationGuard> get(controller: KClass<C>, method: KFunction2<C, G, Unit>) =
+        get("", controller, method.name)
 
     @JvmName("guardedGet")
-    inline fun <reified C : Controller, G : ValidationGuard> get(path: String, method: KFunction2<C, G, Unit>) = get(path, C::class, method.name)
+    inline fun <reified C : Controller, G : ValidationGuard> get(path: String, method: KFunction2<C, G, Unit>) =
+        get(path, C::class, method.name)
 
     @JvmName("guardedGet")
-    fun <C : Controller, G : ValidationGuard> get(path: String, controller: KClass<C>, method: KFunction2<C, G, Unit>) = add(Method.GET, path, ControllerHandler(controller, method.name), middleware).name(method.name.toKebabCase())
+    fun <C : Controller, G : ValidationGuard> get(path: String, controller: KClass<C>, method: KFunction2<C, G, Unit>) =
+        add(Method.GET, path, ControllerHandler(controller, method.name), middleware).name(method.name.toKebabCase())
 
     fun get(path: String, controller: KClass<out Controller>, method: String = DEFAULT_GET_METHOD) =
         add(Method.GET, path, ControllerHandler(controller, method), middleware).name(method.toKebabCase())
@@ -217,15 +221,15 @@ abstract class RoutableBase(
         patch(path, C::class, method.name)
 
     @JvmName("guardedPatch")
-    inline fun <reified C : Controller, G:ValidationGuard> patch(method: KFunction2<C, G, Unit>) =
+    inline fun <reified C : Controller, G : ValidationGuard> patch(method: KFunction2<C, G, Unit>) =
         patch("", C::class, method.name)
 
     @JvmName("guardedPatch")
-    fun <C : Controller, G:ValidationGuard> patch(controller: KClass<C>, method: KFunction2<C, G, Unit>) =
+    fun <C : Controller, G : ValidationGuard> patch(controller: KClass<C>, method: KFunction2<C, G, Unit>) =
         patch("", controller, method.name)
 
     @JvmName("guardedPatch")
-    inline fun <reified C : Controller, G:ValidationGuard> patch(path: String, method: KFunction2<C, G, Unit>) =
+    inline fun <reified C : Controller, G : ValidationGuard> patch(path: String, method: KFunction2<C, G, Unit>) =
         patch(path, C::class, method.name)
 
     fun patch(path: String, controller: KClass<out Controller>, method: String = DEFAULT_PATCH_METHOD) =

@@ -1,6 +1,11 @@
 package dev.alpas.tests.ozone
 
-import dev.alpas.ozone.*
+import dev.alpas.ozone.EntityFactory
+import dev.alpas.ozone.OzoneEntity
+import dev.alpas.ozone.OzoneTable
+import dev.alpas.ozone.bigIncrements
+import dev.alpas.ozone.from
+import dev.alpas.ozone.string
 import dev.alpas.tests.BaseTest
 import me.liuwj.ktorm.database.Database
 import me.liuwj.ktorm.entity.findAll
@@ -8,7 +13,10 @@ import me.liuwj.ktorm.entity.findById
 import me.liuwj.ktorm.schema.int
 import me.liuwj.ktorm.support.sqlite.SQLiteDialect
 import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertNotEquals
+import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
@@ -207,7 +215,7 @@ private object TransformingTestObjectFactory : EntityFactory<TestEntity, TestTab
 
     override fun transform(name: String, value: Any?): Any? {
         return if (name == "firstName") {
-            value?.toString()?.toUpperCase()
+            value?.toString()?.uppercase()
         } else {
             value
         }

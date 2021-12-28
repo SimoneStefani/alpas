@@ -10,7 +10,9 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.impl.annotations.RelaxedMockK
 import io.mockk.junit5.MockKExtension
 import io.mockk.verify
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertThrows
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.extension.ExtendWith
@@ -45,7 +47,11 @@ class AuthOnlyMiddlewareTest {
     }
 
     @Test
-    fun `intended url is not recorded for authorized call`(@RelaxedMockK call: HttpCall, @MockK authChannel: AuthChannel, @RelaxedMockK session: Session) {
+    fun `intended url is not recorded for authorized call`(
+        @RelaxedMockK call: HttpCall,
+        @MockK authChannel: AuthChannel,
+        @RelaxedMockK session: Session
+    ) {
         val intendedUrl = "http://localhost/test"
         every { authChannel.check() } returns true
         every { call getProperty "authChannel" } returns authChannel
@@ -55,7 +61,11 @@ class AuthOnlyMiddlewareTest {
     }
 
     @Test
-    fun `intended url is recorded for unauthorized call`(@RelaxedMockK call: HttpCall, @MockK authChannel: AuthChannel, @RelaxedMockK session: Session) {
+    fun `intended url is recorded for unauthorized call`(
+        @RelaxedMockK call: HttpCall,
+        @MockK authChannel: AuthChannel,
+        @RelaxedMockK session: Session
+    ) {
         val intendedUrl = "http://localhost/test"
         every { authChannel.check() } returns false
         every { call getProperty "authChannel" } returns authChannel

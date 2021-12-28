@@ -21,7 +21,7 @@ import java.time.Instant
  * Checks whether this database is of the given name type.
  */
 fun Database.isOfType(name: String): Boolean {
-    return this.productName.toLowerCase() == name.toLowerCase()
+    return this.productName.lowercase() == name.lowercase()
 }
 
 /**
@@ -58,7 +58,10 @@ fun <E : Any> BaseTable<E>.findOrFail(
     return this.findById(id).orAbort(message ?: "Record with id $id doesn't exist.", statusCode)
 }
 
-fun <E : OzoneEntity<E>, T : OzoneTable<E>> T.create(timestamp: Instant? = Instant.now(), block: AssignmentsBuilder.(T) -> Unit): E {
+fun <E : OzoneEntity<E>, T : OzoneTable<E>> T.create(
+    timestamp: Instant? = Instant.now(),
+    block: AssignmentsBuilder.(T) -> Unit
+): E {
     return create(emptyMap(), timestamp, block)
 }
 
@@ -75,7 +78,7 @@ inline fun <E : Any, T : BaseTable<E>> T.findOneOrFail(
     return this.findOne(predicate).orAbort(message, statusCode)
 }
 
-internal fun <T : Any> SqlType<T>.isVarChar(): Boolean = this.typeName.toLowerCase() == "varchar"
+internal fun <T : Any> SqlType<T>.isVarChar(): Boolean = this.typeName.lowercase() == "varchar"
 
 fun Query.selectFirst() = apply {
     try {
@@ -229,7 +232,8 @@ inline fun <E : OzoneEntity<E>, T : OzoneTable<E>> HttpCall.entity(
                 val param = it.toString()
                 param.toLongOrNull() ?: it
             }
-    val noEntityError = if (env.isDev) "Entity with $primaryKey $key doesn't exist in the table '${table.tableName}'." else null
+    val noEntityError =
+        if (env.isDev) "Entity with $primaryKey $key doesn't exist in the table '${table.tableName}'." else null
     return table.findOne {
         (it[primaryKey] as Column<Any>) eq key
     }.orAbort(noEntityError)

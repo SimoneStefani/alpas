@@ -8,7 +8,7 @@ import org.simplejavamail.config.ConfigLoader
 import org.simplejavamail.email.EmailBuilder
 import org.simplejavamail.mailer.MailerBuilder
 import java.time.Duration
-import java.util.*
+import java.util.Properties
 
 open class SmtpDriver(env: Environment, config: MailDriverConfig = MailDriverConfig()) : MailDriver {
     open val host = config.host ?: env("MAIL_HOST", "smtp.mailtrap.io")

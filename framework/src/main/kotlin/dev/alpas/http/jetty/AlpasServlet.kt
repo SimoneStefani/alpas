@@ -1,13 +1,24 @@
 package dev.alpas.http.jetty
 
-import dev.alpas.*
+import dev.alpas.AppConfig
+import dev.alpas.Application
+import dev.alpas.ChildContainer
+import dev.alpas.Middleware
+import dev.alpas.PackageClassLoader
+import dev.alpas.Pipeline
+import dev.alpas.config
 import dev.alpas.exceptions.MethodNotAllowedException
 import dev.alpas.exceptions.NotFoundHttpException
-import dev.alpas.http.*
+import dev.alpas.http.HttpCall
+import dev.alpas.http.HttpCallHook
+import dev.alpas.http.Method
+import dev.alpas.http.StaticAssetHandler
+import dev.alpas.make
 import dev.alpas.routing.BaseRouteLoader
 import dev.alpas.routing.Route
 import dev.alpas.routing.RouteMatchStatus
 import dev.alpas.routing.Router
+import dev.alpas.tryMake
 import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
@@ -20,10 +31,10 @@ class AlpasServlet(
     private val serverEntryMiddleware: Iterable<KClass<out Middleware<HttpCall>>>
 ) : HttpServlet() {
     private val staticHandler by lazy { StaticAssetHandler(app) }
-    private val corsHandler by lazy { CorsHandler(app) }
+    //private val corsHandler by lazy { CorsHandler(app) } // FIXME
 
     override fun service(req: HttpServletRequest, resp: HttpServletResponse) {
-        if (corsHandler.handle(req, resp)) return
+        //if (corsHandler.handle(req, resp)) return // FIXME
         if (staticHandler.handle(req, resp)) return
 
         val router = app.make<Router>()
@@ -77,10 +88,12 @@ class AlpasServlet(
             RouteMatchStatus.SUCCESS -> call.dispatchToRouteHandler(app, call.route.target(), callHooks)
             RouteMatchStatus.METHOD_NOT_ALLOWED -> {
                 throw MethodNotAllowedException(
-                    "Method ${call.method} is not allowed for this operation. Only ${call.route.allowedMethods()
-                        .joinToString(
-                            ", "
-                        ).toUpperCase()} methods are allowed."
+                    "Method ${call.method} is not allowed for this operation. Only ${
+                        call.route.allowedMethods()
+                            .joinToString(
+                                ", "
+                            ).uppercase()
+                    } methods are allowed."
                 )
             }
             else -> throw NotFoundHttpException()
@@ -118,6 +131,6 @@ class AlpasServlet(
         if (method != Method.POST.name || !allowMethodSpoofing) {
             return method
         }
-        return parameterMap["_method"]?.firstOrNull()?.toUpperCase() ?: method
+        return parameterMap["_method"]?.firstOrNull()?.uppercase() ?: method
     }
 }
