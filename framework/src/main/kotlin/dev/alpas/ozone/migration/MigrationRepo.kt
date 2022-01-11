@@ -86,7 +86,7 @@ internal class CreateMigrationMigrations : Migration() {
 
             val query = """
             CREATE TABLE IF NOT EXISTS "migrations"(
-                "id" serial4 not null,
+                "id" SERIAL not null,
                 "name" varchar(255) not null,
                 "batch" int not null,
                 primary key ("id")
